@@ -1,0 +1,121 @@
+.rc-tabs {
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+}
+
+.rc-tabs__nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--rc-color-border-secondary);
+}
+
+.rc-tabs__list {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rc-tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.rc-tabs--centered .rc-tabs__list {
+  justify-content: center;
+}
+
+.rc-tabs__tab {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--rc-color-text-secondary);
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color var(--rc-duration) var(--rc-easing),
+    background-color var(--rc-duration) var(--rc-easing),
+    border-color var(--rc-duration) var(--rc-easing);
+}
+
+.rc-tabs__tab:hover {
+  color: var(--rc-color-primary);
+}
+
+.rc-tabs__tab:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: -2px;
+}
+
+.rc-tabs__tab--active {
+  color: var(--rc-color-primary);
+  font-weight: 500;
+}
+
+.rc-tabs__ink {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--rc-color-primary);
+  pointer-events: none;
+  transition:
+    transform 0.24s var(--rc-ease-out),
+    width 0.24s var(--rc-ease-out),
+    opacity 0.15s var(--rc-ease-out);
+  will-change: transform, width;
+}
+
+.rc-tabs__tab:disabled {
+  color: var(--rc-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.rc-tabs__tab-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.rc-tabs__extra {
+  flex: none;
+  margin-left: 12px;
+  padding-bottom: 4px;
+}
+
+.rc-tabs__content {
+  padding-top: 16px;
+  outline: none;
+  animation: rc-slide-up-in 0.22s var(--rc-ease-out);
+}
+
+/* ---- card ---- */
+.rc-tabs--card .rc-tabs__nav {
+  border-bottom: 1px solid var(--rc-color-border-secondary);
+}
+
+.rc-tabs--card .rc-tabs__tab {
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-radius: var(--rc-radius) var(--rc-radius) 0 0;
+}
+
+.rc-tabs--card .rc-tabs__tab--active {
+  background: var(--rc-color-bg-container);
+  border-color: var(--rc-color-border-secondary);
+  border-bottom-color: var(--rc-color-bg-container);
+  color: var(--rc-color-text);
+}
+
+.rc-tabs--card .rc-tabs__list {
+  gap: 2px;
+}

@@ -1,0 +1,29 @@
+.rc-space {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.rc-space--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rc-space--wrap {
+  flex-wrap: wrap;
+}
+
+.rc-space__item {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.rc-space--vertical > .rc-space__item {
+  align-self: stretch;
+}
+
+.rc-space__split {
+  display: inline-flex;
+  align-items: center;
+  color: var(--rc-color-text-tertiary);
+}

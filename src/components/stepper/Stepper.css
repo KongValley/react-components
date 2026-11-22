@@ -1,0 +1,92 @@
+.rc-stepper {
+  display: inline-flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  height: 32px;
+  overflow: hidden;
+  border: 1px solid var(--rc-color-border);
+  border-radius: var(--rc-radius);
+  background: var(--rc-color-bg-container);
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  transition:
+    border-color var(--rc-duration) var(--rc-easing),
+    box-shadow var(--rc-duration) var(--rc-easing);
+}
+
+.rc-stepper:focus-within {
+  border-color: var(--rc-color-primary);
+  box-shadow: var(--rc-shadow-focus);
+}
+
+.rc-stepper__button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  padding: 0;
+  border: 0;
+  background: var(--rc-color-fill);
+  color: var(--rc-color-text);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--rc-duration-fast) var(--rc-easing),
+    color var(--rc-duration-fast) var(--rc-easing);
+}
+
+.rc-stepper__button:hover:not(:disabled) {
+  background: var(--rc-color-fill-hover);
+  color: var(--rc-color-primary);
+}
+
+.rc-stepper__button:active:not(:disabled) {
+  background: var(--rc-color-border-secondary);
+}
+
+.rc-stepper__button:disabled {
+  color: var(--rc-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.rc-stepper__button:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: -3px;
+}
+
+.rc-stepper__input {
+  box-sizing: border-box;
+  width: 44px;
+  min-width: 36px;
+  padding: 0 2px;
+  border: 0;
+  border-right: 1px solid var(--rc-color-border-secondary);
+  border-left: 1px solid var(--rc-color-border-secondary);
+  outline: none;
+  background: transparent;
+  color: var(--rc-color-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.rc-stepper__input::-webkit-outer-spin-button,
+.rc-stepper__input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rc-stepper__input:disabled {
+  color: var(--rc-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.rc-stepper--disabled {
+  opacity: 0.6;
+}

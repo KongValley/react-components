@@ -1,0 +1,75 @@
+.rc-divider {
+  margin: var(--rc-space-lg) 0;
+  border-color: var(--rc-color-border-secondary);
+  color: var(--rc-color-text-secondary);
+  font-size: var(--rc-font-size);
+  font-weight: 400;
+}
+
+.rc-divider--horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: var(--rc-space-lg) 0;
+  border-top: 1px solid var(--rc-color-border-secondary);
+}
+
+.rc-divider--horizontal.rc-divider--with-text {
+  border-top: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.rc-divider--horizontal.rc-divider--with-text::before,
+.rc-divider--horizontal.rc-divider--with-text::after {
+  content: '';
+  position: relative;
+  width: 50%;
+  border-top: 1px solid var(--rc-color-border-secondary);
+  transform: translateY(50%);
+}
+
+.rc-divider--horizontal.rc-divider--left::before {
+  width: 5%;
+}
+
+.rc-divider--horizontal.rc-divider--left::after {
+  width: 95%;
+}
+
+.rc-divider--horizontal.rc-divider--right::before {
+  width: 95%;
+}
+
+.rc-divider--horizontal.rc-divider--right::after {
+  width: 5%;
+}
+
+.rc-divider__text {
+  display: inline-block;
+  padding: 0 var(--rc-space-md);
+}
+
+.rc-divider--plain .rc-divider__text {
+  font-size: var(--rc-font-size-sm);
+}
+
+.rc-divider--dashed.rc-divider--horizontal,
+.rc-divider--dashed.rc-divider--horizontal::before,
+.rc-divider--dashed.rc-divider--horizontal::after {
+  border-top-style: dashed;
+}
+
+.rc-divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: 0 var(--rc-space-sm);
+  border-left: 1px solid var(--rc-color-border);
+  vertical-align: middle;
+}
+
+.rc-divider--vertical.rc-divider--dashed {
+  border-left-style: dashed;
+}

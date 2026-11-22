@@ -1,0 +1,43 @@
+.rc-badge {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.rc-badge--standalone {
+  line-height: 1;
+}
+
+.rc-badge__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--rc-radius-full);
+  background: var(--rc-color-danger);
+  color: #ffffff;
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size-sm);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1px var(--rc-color-bg-container);
+  animation: rc-pop-in 0.2s var(--rc-ease-spring);
+}
+
+.rc-badge--wrapper > .rc-badge__count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  transform-origin: 100% 0;
+}
+
+.rc-badge__count--dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  padding: 0;
+}

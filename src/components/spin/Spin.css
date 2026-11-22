@@ -1,0 +1,53 @@
+.rc-spin {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--rc-space-sm);
+  color: var(--rc-color-primary);
+  line-height: 1;
+}
+
+.rc-spin__icon {
+  display: block;
+}
+
+.rc-spin__tip {
+  color: var(--rc-color-primary);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+  line-height: var(--rc-line-height);
+  animation: rc-fade-in 0.2s var(--rc-ease-out);
+}
+
+.rc-spin-wrapper {
+  position: relative;
+}
+
+.rc-spin-wrapper__content {
+  transition: opacity var(--rc-duration) var(--rc-easing);
+}
+
+.rc-spin-wrapper--spinning > .rc-spin-wrapper__content {
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+
+.rc-spin-wrapper__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  animation: rc-fade-in 0.18s var(--rc-ease-out);
+}
+
+.rc-spin--small .rc-spin__tip {
+  font-size: var(--rc-font-size-sm);
+}
+
+.rc-spin--large .rc-spin__tip {
+  font-size: var(--rc-font-size-lg);
+}

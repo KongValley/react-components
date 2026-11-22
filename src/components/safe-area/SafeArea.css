@@ -1,0 +1,16 @@
+.rc-safe-area {
+  flex: none;
+}
+
+.rc-safe-area--top {
+  padding-top: var(--rc-safe-area-top);
+}
+
+.rc-safe-area--bottom {
+  padding-bottom: var(--rc-safe-area-bottom);
+}
+
+.rc-safe-area--both {
+  padding-top: var(--rc-safe-area-top);
+  padding-bottom: var(--rc-safe-area-bottom);
+}

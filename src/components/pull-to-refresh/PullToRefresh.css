@@ -1,0 +1,48 @@
+.rc-pull-refresh {
+  position: relative;
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  overscroll-behavior-y: contain;
+}
+
+.rc-pull-refresh__head {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  color: var(--rc-color-text-tertiary);
+  pointer-events: none;
+  transition: height 0.28s var(--rc-ease-out);
+}
+
+.rc-pull-refresh__indicator {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.rc-pull-refresh__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rc-color-primary);
+  transition: transform 0.18s var(--rc-ease-out);
+}
+
+.rc-pull-refresh__text {
+  color: var(--rc-color-text-tertiary);
+}
+
+.rc-pull-refresh__content {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.28s var(--rc-ease-out);
+}

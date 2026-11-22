@@ -1,0 +1,129 @@
+.rc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: var(--rc-radius-sm);
+  background: var(--rc-color-fill);
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size-sm);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition:
+    background-color var(--rc-duration) var(--rc-easing),
+    border-color var(--rc-duration) var(--rc-easing),
+    color var(--rc-duration) var(--rc-easing),
+    transform 0.12s var(--rc-ease-out);
+}
+
+.rc-tag:hover {
+  transform: translateY(-1px);
+}
+
+.rc-tag--bordered {
+  border-color: var(--rc-color-border);
+}
+
+.rc-tag--primary {
+  background: var(--rc-color-primary-bg);
+  color: var(--rc-color-primary);
+}
+
+.rc-tag--success {
+  background: var(--rc-color-success-bg);
+  color: var(--rc-color-success);
+}
+
+.rc-tag--warning {
+  background: var(--rc-color-warning-bg);
+  color: var(--rc-color-warning);
+}
+
+.rc-tag--danger {
+  background: var(--rc-color-danger-bg);
+  color: var(--rc-color-danger);
+}
+
+.rc-tag--info {
+  background: var(--rc-color-info-bg);
+  color: var(--rc-color-info);
+}
+
+.rc-tag--primary.rc-tag--bordered {
+  border-color: var(--rc-color-primary-border);
+}
+
+.rc-tag--success.rc-tag--bordered {
+  border-color: var(--rc-color-success-border);
+}
+
+.rc-tag--warning.rc-tag--bordered {
+  border-color: var(--rc-color-warning-border);
+}
+
+.rc-tag--danger.rc-tag--bordered {
+  border-color: var(--rc-color-danger-border);
+}
+
+.rc-tag--info.rc-tag--bordered {
+  border-color: var(--rc-color-info-border);
+}
+
+.rc-tag--custom {
+  background: color-mix(in srgb, var(--rc-tag-color) 12%, transparent);
+  color: var(--rc-tag-color);
+}
+
+.rc-tag--custom.rc-tag--bordered {
+  border-color: color-mix(in srgb, var(--rc-tag-color) 35%, transparent);
+}
+
+.rc-tag__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.rc-tag__content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rc-tag--closable {
+  padding-right: 4px;
+}
+
+.rc-tag__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  opacity: 0.65;
+  cursor: pointer;
+  transition:
+    background-color var(--rc-duration) var(--rc-easing),
+    opacity var(--rc-duration) var(--rc-easing),
+    transform 0.12s var(--rc-ease-out);
+}
+
+.rc-tag__close:hover {
+  background: color-mix(in srgb, currentColor 14%, transparent);
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.rc-tag__close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}

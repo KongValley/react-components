@@ -1,0 +1,149 @@
+/**
+ * Minimal, non-intrusive baseline. The library never resets global page styles;
+ * only elements carrying a `rc-` class are normalized.
+ */
+[class^='rc-'],
+[class*=' rc-'] {
+  box-sizing: border-box;
+}
+
+[class^='rc-'] *,
+[class*=' rc-'] *,
+[class^='rc-'] *::before,
+[class*=' rc-'] *::before,
+[class^='rc-'] *::after,
+[class*=' rc-'] *::after {
+  box-sizing: inherit;
+}
+
+button.rc-btn,
+.rc-input,
+.rc-select,
+.rc-pagination,
+.rc-form,
+.rc-tabs,
+.rc-dropdown-menu,
+.rc-tooltip,
+.rc-popover {
+  font-family: var(--rc-font-family);
+}
+
+.rc-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Shared focus ring for keyboard users. */
+.rc-focus-ring:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: 2px;
+}
+
+/* Respect the user's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  [class^='rc-'],
+  [class^='rc-'] *,
+  [class^='rc-'] *::before,
+  [class^='rc-'] *::after,
+  [class*=' rc-'],
+  [class*=' rc-'] *,
+  [class*=' rc-'] *::before,
+  [class*=' rc-'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Shared motion primitives */
+@keyframes rc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rc-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rc-slide-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rc-alert-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating panel primitive (position is supplied inline). */
+.rc-popup {
+  position: fixed;
+  z-index: var(--rc-z-index-dropdown);
+  opacity: 0;
+  transform: translate3d(var(--rc-popup-offset-x, 0), var(--rc-popup-offset-y, 0), 0) scale(0.97);
+  transform-origin: var(--rc-popup-origin, 50% 0%);
+  transition:
+    opacity 0.14s var(--rc-ease-out),
+    transform 0.18s var(--rc-ease-out);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.rc-popup[data-state='open'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.rc-popup[data-state='closed'] {
+  pointer-events: none;
+}
+
+.rc-popup[data-placement^='top'] {
+  --rc-popup-offset-y: 5px;
+  --rc-popup-origin: 50% 100%;
+}
+
+.rc-popup[data-placement^='bottom'] {
+  --rc-popup-offset-y: -5px;
+  --rc-popup-origin: 50% 0%;
+}
+
+.rc-popup[data-placement^='left'] {
+  --rc-popup-offset-x: 5px;
+  --rc-popup-origin: 100% 50%;
+}
+
+.rc-popup[data-placement^='right'] {
+  --rc-popup-offset-x: -5px;
+  --rc-popup-origin: 0% 50%;
+}

@@ -1,0 +1,216 @@
+.rc-typography {
+  margin: 0;
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+  line-height: var(--rc-line-height);
+  word-break: break-word;
+}
+
+.rc-title {
+  margin: 0 0 0.5em;
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-weight: 600;
+  line-height: var(--rc-line-height-heading);
+}
+
+.rc-title:last-child {
+  margin-bottom: 0;
+}
+
+.rc-title--1 {
+  font-size: var(--rc-font-size-3xl);
+}
+
+.rc-title--2 {
+  font-size: var(--rc-font-size-2xl);
+}
+
+.rc-title--3 {
+  font-size: var(--rc-font-size-xl);
+}
+
+.rc-title--4 {
+  font-size: var(--rc-font-size-lg);
+}
+
+.rc-title--5 {
+  font-size: var(--rc-font-size);
+}
+
+.rc-paragraph {
+  margin: 0 0 1em;
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+  line-height: var(--rc-line-height);
+}
+
+.rc-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.rc-text {
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+}
+
+.rc-link {
+  color: var(--rc-color-primary);
+  font-family: var(--rc-font-family);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--rc-duration) var(--rc-easing);
+}
+
+.rc-link:hover {
+  color: var(--rc-color-primary-hover);
+  text-decoration: underline;
+}
+
+.rc-link:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.rc-link--disabled,
+.rc-link--disabled:hover {
+  color: var(--rc-color-text-disabled);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+/* ---- semantic colors ---- */
+.rc-typography--secondary {
+  color: var(--rc-color-text-secondary);
+}
+
+.rc-typography--success {
+  color: var(--rc-color-success);
+}
+
+.rc-typography--warning {
+  color: var(--rc-color-warning);
+}
+
+.rc-typography--danger {
+  color: var(--rc-color-danger);
+}
+
+.rc-typography--disabled,
+.rc-typography--disabled:hover {
+  color: var(--rc-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ---- decorations ---- */
+.rc-typography--strong {
+  font-weight: 600;
+}
+
+.rc-typography--italic {
+  font-style: italic;
+}
+
+.rc-typography--underline .rc-typography__content,
+.rc-typography--underline.rc-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.rc-typography--delete .rc-typography__content {
+  text-decoration: line-through;
+}
+
+.rc-typography--code .rc-typography__content {
+  padding: 1px 6px;
+  border: 1px solid var(--rc-color-border-secondary);
+  border-radius: var(--rc-radius-sm);
+  background: var(--rc-color-fill);
+  font-family: var(--rc-font-family-code);
+  font-size: 0.9em;
+}
+
+.rc-typography--mark .rc-typography__content {
+  padding: 0 4px;
+  border-radius: 2px;
+  background: var(--rc-color-warning-bg);
+  color: inherit;
+}
+
+/* ---- ellipsis ---- */
+.rc-typography--ellipsis {
+  max-width: 100%;
+}
+
+.rc-typography__content--ellipsis {
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rc-typography__content--multiline {
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+}
+
+/* ---- copy ---- */
+.rc-typography--with-copy {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.rc-title.rc-typography--with-copy,
+.rc-paragraph.rc-typography--with-copy {
+  display: flex;
+  width: 100%;
+}
+
+.rc-typography--with-copy .rc-typography__content {
+  min-width: 0;
+}
+
+.rc-typography__copy {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--rc-radius-sm);
+  background: transparent;
+  color: var(--rc-color-text-tertiary);
+  cursor: pointer;
+  vertical-align: middle;
+  transition:
+    color var(--rc-duration) var(--rc-easing),
+    background-color var(--rc-duration) var(--rc-easing);
+}
+
+.rc-typography__copy:hover {
+  background: var(--rc-color-fill);
+  color: var(--rc-color-primary);
+}
+
+.rc-typography__copy:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: 1px;
+}
+
+.rc-typography__copy.is-copied {
+  color: var(--rc-color-success);
+}
+
+.rc-typography__copy.is-copied .rc-icon {
+  animation: rc-pop-in 0.18s var(--rc-ease-spring);
+}

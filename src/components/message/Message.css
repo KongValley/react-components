@@ -1,0 +1,112 @@
+.rc-message-container {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: var(--rc-z-index-message);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.rc-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 9px 14px;
+  border: 1px solid var(--rc-color-border-secondary);
+  border-radius: var(--rc-radius-md);
+  background: var(--rc-color-bg-elevated);
+  box-shadow: var(--rc-shadow);
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+  line-height: 1.5;
+  pointer-events: auto;
+  animation: rc-message-in 0.24s var(--rc-ease-spring-soft);
+  transition:
+    opacity 0.18s var(--rc-ease-out),
+    transform 0.18s var(--rc-ease-out);
+}
+
+.rc-message--leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.rc-message__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+
+.rc-message--info .rc-message__icon {
+  color: var(--rc-color-info);
+}
+
+.rc-message--success .rc-message__icon {
+  color: var(--rc-color-success);
+}
+
+.rc-message--warning .rc-message__icon {
+  color: var(--rc-color-warning);
+}
+
+.rc-message--error .rc-message__icon {
+  color: var(--rc-color-danger);
+}
+
+.rc-message--loading .rc-message__icon {
+  color: var(--rc-color-primary);
+}
+
+.rc-message__content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.rc-message__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--rc-color-text-tertiary);
+  cursor: pointer;
+  transition:
+    background-color var(--rc-duration) var(--rc-easing),
+    color var(--rc-duration) var(--rc-easing),
+    transform 0.12s var(--rc-ease-out);
+}
+
+.rc-message__close:hover {
+  background: var(--rc-color-fill);
+  color: var(--rc-color-text-secondary);
+  transform: scale(1.12);
+}
+
+.rc-message__close:focus-visible {
+  outline: 2px solid var(--rc-color-primary);
+  outline-offset: 1px;
+}
+
+@keyframes rc-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

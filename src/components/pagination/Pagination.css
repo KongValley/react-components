@@ -1,0 +1,127 @@
+.rc-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  color: var(--rc-color-text);
+  font-family: var(--rc-font-family);
+  font-size: var(--rc-font-size);
+}
+
+.rc-pagination__total {
+  margin-right: 8px;
+  color: var(--rc-color-text-secondary);
+}
+
+.rc-pagination__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 6px;
+  border: 1px solid transparent;
+  border-radius: var(--rc-radius-sm);
+  background: transparent;
+  color: var(--rc-color-text);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color var(--rc-duration) var(--rc-easing),
+    border-color var(--rc-duration) var(--rc-easing),
+    color var(--rc-duration) var(--rc-easing),
+    transform 0.12s var(--rc-ease-out);
+}
+
+.rc-pagination__item:hover:not(:disabled) {
+  background: var(--rc-color-fill);
+  color: var(--rc-color-primary);
+  transform: translateY(-1px);
+}
+
+.rc-pagination__item:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.rc-pagination__item:focus-visible {
+  outline: none;
+  box-shadow: var(--rc-shadow-focus);
+}
+
+.rc-pagination__item--active {
+  border-color: var(--rc-color-primary);
+  background: var(--rc-color-primary-bg);
+  color: var(--rc-color-primary);
+  font-weight: 600;
+  animation: rc-pop-in 0.18s var(--rc-ease-spring);
+}
+
+.rc-pagination__item--active:hover:not(:disabled) {
+  background: var(--rc-color-primary-bg);
+  color: var(--rc-color-primary);
+}
+
+.rc-pagination__item--arrow {
+  color: var(--rc-color-text-secondary);
+}
+
+.rc-pagination__item:disabled {
+  color: var(--rc-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.rc-pagination__item--jump {
+  color: var(--rc-color-text-tertiary);
+}
+
+.rc-pagination__simple {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--rc-color-text-secondary);
+}
+
+.rc-pagination__simple-current {
+  color: var(--rc-color-primary);
+  font-weight: 600;
+}
+
+.rc-pagination__size {
+  display: inline-block;
+  width: 112px;
+  margin-left: 4px;
+}
+
+.rc-pagination__jumper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+  color: var(--rc-color-text-secondary);
+  white-space: nowrap;
+}
+
+.rc-pagination__jumper-input {
+  width: 48px;
+  height: 32px;
+  padding: 0 6px;
+  border: 1px solid var(--rc-color-border);
+  border-radius: var(--rc-radius-sm);
+  background: var(--rc-color-bg-container);
+  color: var(--rc-color-text);
+  font: inherit;
+  text-align: center;
+  outline: none;
+  transition:
+    border-color var(--rc-duration) var(--rc-easing),
+    box-shadow 0.18s var(--rc-ease-out);
+}
+
+.rc-pagination__jumper-input:focus {
+  border-color: var(--rc-color-primary);
+  box-shadow: var(--rc-shadow-focus);
+}
