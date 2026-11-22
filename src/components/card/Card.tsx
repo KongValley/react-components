@@ -50,39 +50,39 @@ const CardRoot = forwardRef<HTMLDivElement, CardProps>(function Card(
     <div
       ref={ref}
       className={cx(
-        'rc-card',
-        bordered && 'rc-card--bordered',
-        hoverable && 'rc-card--hoverable',
-        size === 'small' && 'rc-card--small',
-        loading && 'rc-card--loading',
+        'rcui-card',
+        bordered && 'rcui-card--bordered',
+        hoverable && 'rcui-card--hoverable',
+        size === 'small' && 'rcui-card--small',
+        loading && 'rcui-card--loading',
         className,
       )}
       aria-busy={loading || undefined}
       {...rest}
     >
-      {cover ? <div className="rc-card__cover">{cover}</div> : null}
+      {cover ? <div className="rcui-card__cover">{cover}</div> : null}
       {hasHeader ? (
-        <div className="rc-card__header">
-          <div className="rc-card__title">{title}</div>
-          {extra !== undefined ? <div className="rc-card__extra">{extra}</div> : null}
+        <div className="rcui-card__header">
+          <div className="rcui-card__title">{title}</div>
+          {extra !== undefined ? <div className="rcui-card__extra">{extra}</div> : null}
         </div>
       ) : null}
-      <div className="rc-card__body">
+      <div className="rcui-card__body">
         {loading ? (
-          <div className="rc-card__skeleton" aria-hidden="true">
-            <span className="rc-card__skeleton-line rc-card__skeleton-line--title" />
-            <span className="rc-card__skeleton-line" />
-            <span className="rc-card__skeleton-line" />
-            <span className="rc-card__skeleton-line rc-card__skeleton-line--short" />
+          <div className="rcui-card__skeleton" aria-hidden="true">
+            <span className="rcui-card__skeleton-line rcui-card__skeleton-line--title" />
+            <span className="rcui-card__skeleton-line" />
+            <span className="rcui-card__skeleton-line" />
+            <span className="rcui-card__skeleton-line rcui-card__skeleton-line--short" />
           </div>
         ) : (
           children
         )}
       </div>
       {hasActions ? (
-        <ul className="rc-card__actions">
+        <ul className="rcui-card__actions">
           {actions!.map((action, index) => (
-            <li key={index} className="rc-card__action">
+            <li key={index} className="rcui-card__action">
               {action}
             </li>
           ))}
@@ -97,12 +97,12 @@ const CardMeta = forwardRef<HTMLDivElement, CardMetaProps>(function CardMeta(
   ref,
 ) {
   return (
-    <div ref={ref} className={cx('rc-card-meta', className)} {...rest}>
-      {avatar !== undefined ? <div className="rc-card-meta__avatar">{avatar}</div> : null}
-      <div className="rc-card-meta__detail">
-        {title !== undefined ? <div className="rc-card-meta__title">{title}</div> : null}
+    <div ref={ref} className={cx('rcui-card-meta', className)} {...rest}>
+      {avatar !== undefined ? <div className="rcui-card-meta__avatar">{avatar}</div> : null}
+      <div className="rcui-card-meta__detail">
+        {title !== undefined ? <div className="rcui-card-meta__title">{title}</div> : null}
         {description !== undefined ? (
-          <div className="rc-card-meta__description">{description}</div>
+          <div className="rcui-card-meta__description">{description}</div>
         ) : null}
       </div>
     </div>

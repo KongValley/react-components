@@ -1,68 +1,68 @@
-.rc-skeleton {
+.rcui-skeleton {
   display: flex;
-  gap: var(--rc-space-lg);
+  gap: var(--rcui-space-lg);
   width: 100%;
 }
 
-.rc-skeleton__avatar {
+.rcui-skeleton__avatar {
   flex: none;
-  background: var(--rc-color-fill);
+  background: var(--rcui-color-fill);
 }
 
-.rc-skeleton__avatar--circle {
-  border-radius: var(--rc-radius-full);
+.rcui-skeleton__avatar--circle {
+  border-radius: var(--rcui-radius-full);
 }
 
-.rc-skeleton__avatar--square {
-  border-radius: var(--rc-radius-md);
+.rcui-skeleton__avatar--square {
+  border-radius: var(--rcui-radius-md);
 }
 
-.rc-skeleton__content {
+.rcui-skeleton__content {
   flex: 1;
   min-width: 0;
 }
 
-.rc-skeleton__title,
-.rc-skeleton__line {
+.rcui-skeleton__title,
+.rcui-skeleton__line {
   height: 16px;
-  background: var(--rc-color-fill);
+  background: var(--rcui-color-fill);
 }
 
-.rc-skeleton__title {
+.rcui-skeleton__title {
   height: 18px;
-  margin-bottom: var(--rc-space-lg);
-  border-radius: var(--rc-radius-sm);
+  margin-bottom: var(--rcui-space-lg);
+  border-radius: var(--rcui-radius-sm);
 }
 
-.rc-skeleton__paragraph {
+.rcui-skeleton__paragraph {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.rc-skeleton__line {
-  border-radius: var(--rc-radius-sm);
+.rcui-skeleton__line {
+  border-radius: var(--rcui-radius-sm);
 }
 
-.rc-skeleton--round .rc-skeleton__title,
-.rc-skeleton--round .rc-skeleton__line {
-  border-radius: var(--rc-radius-full);
+.rcui-skeleton--round .rcui-skeleton__title,
+.rcui-skeleton--round .rcui-skeleton__line {
+  border-radius: var(--rcui-radius-full);
 }
 
-.rc-skeleton--active .rc-skeleton__avatar,
-.rc-skeleton--active .rc-skeleton__title,
-.rc-skeleton--active .rc-skeleton__line {
+.rcui-skeleton--active .rcui-skeleton__avatar,
+.rcui-skeleton--active .rcui-skeleton__title,
+.rcui-skeleton--active .rcui-skeleton__line {
   background: linear-gradient(
     90deg,
-    var(--rc-color-fill) 25%,
-    var(--rc-color-fill-hover) 37%,
-    var(--rc-color-fill) 63%
+    var(--rcui-color-fill) 25%,
+    var(--rcui-color-fill-hover) 37%,
+    var(--rcui-color-fill) 63%
   );
   background-size: 400% 100%;
-  animation: rc-skeleton-shimmer 1.4s ease infinite;
+  animation: rcui-skeleton-shimmer 1.4s ease infinite;
 }
 
-@keyframes rc-skeleton-shimmer {
+@keyframes rcui-skeleton-shimmer {
   0% {
     background-position: 100% 50%;
   }

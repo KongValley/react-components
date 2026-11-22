@@ -16,7 +16,7 @@
 - **可组合的浮层体系**：Tooltip / Popover / Dropdown / Select 共用自研定位引擎，自动翻转、跟随滚动。
 - **移动端手势组件**：底部弹出层、动作面板、滚轮选择器、轮播、下拉刷新等，内置安全区、滚动锁定、触摸拖拽与指针手势。
 - **细腻的过渡动效**：浮层、标签页指示器、开关、复选框、表单反馈等内置克制的进出场与微交互，统一使用运动令牌，并尊重 `prefers-reduced-motion`。
-- **零全局污染**：只作用于带有 `rc-` 前缀的元素，不重置宿主应用的全局样式。
+- **零全局污染**：只作用于带有 `rcui-` 前缀的元素，不重置宿主应用的全局样式。
 
 ## 安装
 
@@ -52,7 +52,13 @@ export function App() {
 }
 ```
 
-样式集中为单个 `style.css`，在应用入口引入一次即可。组件 JS 可从包根按需 tree-shaking。
+样式默认集中为单个 `style.css`，在应用入口引入一次即可。组件 JS 可从包根按需 tree-shaking。
+
+如果需要把组件样式放入独立的 CSS Cascade Layer，改用分层版本（二选一，不要同时引入）：
+
+```ts
+import '@rc/components/style.layer.css';
+```
 
 ### 暗色模式
 
@@ -68,16 +74,60 @@ delete document.documentElement.dataset.theme;
 
 ```css
 :root {
-  --rc-color-primary: #0f766e;
-  --rc-color-primary-hover: #0d9488;
-  --rc-color-primary-bg: #f0fdfa;
-  --rc-color-primary-border: #99f6e4;
-  --rc-radius: 4px;
-  --rc-font-family: 'Inter', 'PingFang SC', sans-serif;
+  --rcui-color-primary: #0f766e;
+  --rcui-color-primary-hover: #0d9488;
+  --rcui-color-primary-bg: #f0fdfa;
+  --rcui-color-primary-border: #99f6e4;
+  --rcui-radius: 4px;
+  --rcui-font-family: 'Inter', 'PingFang SC', sans-serif;
 }
 ```
 
 完整令牌清单见 [`src/styles/tokens.css`](src/styles/tokens.css)。
+
+### 样式命名空间
+
+自 **0.4.0** 起，所有运行时命名统一使用 `rcui-` 前缀，避免与 `rc-select`、`rc-tabs` 等 rc-* 生态组件产生类名或变量冲突：
+
+- 类名：`.rcui-btn`、`.rcui-table__cell`
+- CSS 变量：`--rcui-color-primary`
+- keyframes：`rcui-fade-in`
+- 设备属性：`data-rcui-device="mobile|desktop"`
+
+包导入路径不变，仍为 `@rc/components`。从 0.3 升级时，业务侧的样式覆写需要同步替换 `rc-` → `rcui-`、`--rc-` → `--rcui-`、`data-rc-device` → `data-rcui-device`。
+
+### Cascade Layers
+
+`style.layer.css` 把全部组件样式包在 `@layer rcui` 中，适合嵌入已有大量全局样式的宿主系统。先声明层顺序，再引入分层样式：
+
+```css
+/* layers.css */
+@layer reset, rcui, app;
+```
+
+```ts
+import './layers.css';
+import '@rc/components/style.layer.css';
+import './app.css';
+```
+
+之后宿主自己的样式可以放在 `app` 层中稳定覆盖组件库，无需堆叠选择器或使用 `!important`：
+
+```css
+@layer app {
+  .checkout .rcui-btn--primary {
+    border-radius: 999px;
+  }
+}
+```
+
+注意：
+
+- `style.css` 与 `style.layer.css` 只能选一个引入。
+- 未分层的宿主 CSS 永远优先于 `@layer rcui`，这也是宿主覆盖组件样式的推荐方式。
+- 如果宿主使用 Tailwind Preflight 等未分层 reset，它们也会优先于组件样式；请把 reset 放进更低层（如 `@layer reset`），或改用普通 `style.css`。
+- Cascade Layers 需要现代浏览器；旧浏览器请继续使用 `style.css`。
+- 分层文件与普通文件内容一致，仅多一层 `@layer rcui { ... }` 包装。
 
 ### 动效
 
@@ -85,10 +135,10 @@ delete document.documentElement.dataset.theme;
 
 ```css
 :root {
-  --rc-duration-fast: 0.12s;
-  --rc-duration: 0.2s;
-  --rc-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --rc-ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --rcui-duration-fast: 0.12s;
+  --rcui-duration: 0.2s;
+  --rcui-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --rcui-ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 ```
 
@@ -247,7 +297,7 @@ export function MobileSettings() {
   const [active, setActive] = useState('home');
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--rc-color-bg-layout)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--rcui-color-bg-layout)' }}>
       <NavBar title="设置" onBack={() => window.history.back()} />
       <CellGroup inset title="账号">
         <Cell title="昵称" value="Zoe" arrow />
@@ -269,7 +319,7 @@ npm run dev          # 启动文档站（http://127.0.0.1:5173）
 npm run typecheck    # 检查 src 与 docs 两套 tsconfig
 npm test             # Vitest + Testing Library
 npm run test:watch   # 监听模式
-npm run build        # 构建库：ESM + CJS + 类型 + style.css
+npm run build        # 构建库：ESM + CJS + 类型 + style.css + style.layer.css
 npm run build:docs   # 构建静态文档站到 dist-docs/
 npm run preview:docs # 预览文档构建产物
 ```
@@ -300,6 +350,7 @@ dist/
   index.js.map
   index.cjs.map
   style.css       # 汇总样式
+  style.layer.css # 汇总样式（包在 @layer rcui 中）
   types/          # .d.ts 声明
 ```
 
@@ -312,7 +363,8 @@ dist/
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
   },
-  "./style.css": "./dist/style.css"
+  "./style.css": "./dist/style.css",
+  "./style.layer.css": "./dist/style.layer.css"
 }
 ```
 
@@ -326,7 +378,7 @@ dist/
 - TabBar 使用 `tablist` / `tab`，Picker 使用 `listbox` / `option`，均支持方向键操作。
 - 纯图标按钮需要传入 `aria-label`（例如 `<Button shape="circle" icon={<Icon name="search" />} aria-label="搜索" />`）。
 
-## 当前边界（v0.3）
+## 当前边界（v0.4）
 
 - 不含虚拟滚动、固定列、树形表格。
 - 不含 DatePicker、Upload、Tree、Cascader 等重型组件。

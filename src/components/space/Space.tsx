@@ -67,9 +67,9 @@ export const Space = forwardRef<HTMLDivElement, SpaceProps>(function Space(
     <div
       ref={ref}
       className={cx(
-        'rc-space',
-        `rc-space--${direction}`,
-        wrap && 'rc-space--wrap',
+        'rcui-space',
+        `rcui-space--${direction}`,
+        wrap && 'rcui-space--wrap',
         className,
       )}
       style={{ ...gapStyle, alignItems: ALIGN_MAP[align], ...style }}
@@ -77,8 +77,8 @@ export const Space = forwardRef<HTMLDivElement, SpaceProps>(function Space(
     >
       {items.map((child, index) => (
         <Fragment key={(child as { key?: string }).key ?? `item-${index}`}>
-          {index > 0 && split ? <span className="rc-space__split">{split}</span> : null}
-          <span className="rc-space__item">{child}</span>
+          {index > 0 && split ? <span className="rcui-space__split">{split}</span> : null}
+          <span className="rcui-space__item">{child}</span>
         </Fragment>
       ))}
     </div>

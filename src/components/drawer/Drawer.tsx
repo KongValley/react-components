@@ -88,11 +88,11 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
   return (
     <Portal container={getContainer?.()}>
       <div
-        className="rc-drawer-root"
+        className="rcui-drawer-root"
         style={zIndex !== undefined ? { zIndex } : undefined}
       >
         <div
-          className={cx('rc-drawer-mask', active && 'rc-drawer-mask--active')}
+          className={cx('rcui-drawer-mask', active && 'rcui-drawer-mask--active')}
           aria-hidden="true"
           onClick={maskClosable ? onClose : undefined}
         />
@@ -104,9 +104,9 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
             else if (forwardedRef) forwardedRef.current = node;
           }}
           className={cx(
-            'rc-drawer',
-            `rc-drawer--${placement}`,
-            active && 'rc-drawer--active',
+            'rcui-drawer',
+            `rcui-drawer--${placement}`,
+            active && 'rcui-drawer--active',
             className,
           )}
           role="dialog"
@@ -116,15 +116,15 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
           style={horizontal ? { width } : { height }}
         >
           {hasHeader ? (
-            <div className="rc-drawer__header">
-              <div className="rc-drawer__title" id={title !== undefined ? titleId : undefined}>
+            <div className="rcui-drawer__header">
+              <div className="rcui-drawer__title" id={title !== undefined ? titleId : undefined}>
                 {title}
               </div>
-              {extra !== undefined ? <div className="rc-drawer__extra">{extra}</div> : null}
+              {extra !== undefined ? <div className="rcui-drawer__extra">{extra}</div> : null}
               {closable ? (
                 <button
                   type="button"
-                  className="rc-drawer__close"
+                  className="rcui-drawer__close"
                   aria-label="Close drawer"
                   onClick={onClose}
                 >
@@ -133,8 +133,8 @@ export const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
               ) : null}
             </div>
           ) : null}
-          <div className="rc-drawer__body">{children}</div>
-          {footer !== undefined ? <div className="rc-drawer__footer">{footer}</div> : null}
+          <div className="rcui-drawer__body">{children}</div>
+          {footer !== undefined ? <div className="rcui-drawer__footer">{footer}</div> : null}
         </div>
       </div>
     </Portal>

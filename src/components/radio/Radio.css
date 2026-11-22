@@ -1,17 +1,17 @@
-.rc-radio {
+.rcui-radio {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
-  font-size: var(--rc-font-size);
-  line-height: var(--rc-line-height);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
+  font-size: var(--rcui-font-size);
+  line-height: var(--rcui-line-height);
   cursor: pointer;
   user-select: none;
 }
 
-.rc-radio__control {
+.rcui-radio__control {
   position: relative;
   display: inline-flex;
   flex: none;
@@ -19,21 +19,21 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--rc-color-border-strong);
-  border-radius: var(--rc-radius-full);
-  background: var(--rc-color-bg-container);
+  border: 1px solid var(--rcui-color-border-strong);
+  border-radius: var(--rcui-radius-full);
+  background: var(--rcui-color-bg-container);
   transition:
-    border-color var(--rc-duration) var(--rc-easing),
-    background-color var(--rc-duration) var(--rc-easing),
-    box-shadow 0.16s var(--rc-ease-out),
-    transform 0.12s var(--rc-ease-out);
+    border-color var(--rcui-duration) var(--rcui-easing),
+    background-color var(--rcui-duration) var(--rcui-easing),
+    box-shadow 0.16s var(--rcui-ease-out),
+    transform 0.12s var(--rcui-ease-out);
 }
 
-.rc-radio:active:not(.rc-radio--disabled):not(.rc-radio--button) .rc-radio__control {
+.rcui-radio:active:not(.rcui-radio--disabled):not(.rcui-radio--button) .rcui-radio__control {
   transform: scale(0.9);
 }
 
-.rc-radio__input {
+.rcui-radio__input {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -43,102 +43,102 @@
   cursor: inherit;
 }
 
-.rc-radio__mark {
+.rcui-radio__mark {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--rc-color-primary);
+  background: var(--rcui-color-primary);
   opacity: 0;
   transform: scale(0.4);
   transition:
-    opacity 0.14s var(--rc-ease-out),
-    transform 0.22s var(--rc-ease-spring);
+    opacity 0.14s var(--rcui-ease-out),
+    transform 0.22s var(--rcui-ease-spring);
   pointer-events: none;
 }
 
-.rc-radio:hover .rc-radio__control {
-  border-color: var(--rc-color-primary);
+.rcui-radio:hover .rcui-radio__control {
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-radio__control:has(.rc-radio__input:focus-visible) {
-  box-shadow: var(--rc-shadow-focus);
+.rcui-radio__control:has(.rcui-radio__input:focus-visible) {
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-radio--checked .rc-radio__control {
-  border-color: var(--rc-color-primary);
+.rcui-radio--checked .rcui-radio__control {
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-radio--checked .rc-radio__mark {
+.rcui-radio--checked .rcui-radio__mark {
   opacity: 1;
   transform: scale(1);
 }
 
-.rc-radio__label {
+.rcui-radio__label {
   min-width: 0;
 }
 
-.rc-radio--disabled,
-.rc-radio--disabled:hover {
-  color: var(--rc-color-text-disabled);
+.rcui-radio--disabled,
+.rcui-radio--disabled:hover {
+  color: var(--rcui-color-text-disabled);
   cursor: not-allowed;
 }
 
-.rc-radio--disabled .rc-radio__control,
-.rc-radio--disabled:hover .rc-radio__control {
-  background: var(--rc-color-bg-disabled);
-  border-color: var(--rc-color-border);
+.rcui-radio--disabled .rcui-radio__control,
+.rcui-radio--disabled:hover .rcui-radio__control {
+  background: var(--rcui-color-bg-disabled);
+  border-color: var(--rcui-color-border);
 }
 
-.rc-radio--disabled .rc-radio__mark {
-  background: var(--rc-color-text-disabled);
+.rcui-radio--disabled .rcui-radio__mark {
+  background: var(--rcui-color-text-disabled);
 }
 
 /* ---- group ---- */
-.rc-radio-group {
+.rcui-radio-group {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 8px 16px;
 }
 
 /* ---- button style ---- */
-.rc-radio-group--button {
+.rcui-radio-group--button {
   gap: 0;
 }
 
-.rc-radio--button {
+.rcui-radio--button {
   position: relative;
   justify-content: center;
-  height: var(--rc-control-height);
+  height: var(--rcui-control-height);
   padding: 0 16px;
   margin-left: -1px;
-  border: 1px solid var(--rc-color-border);
-  background: var(--rc-color-bg-container);
+  border: 1px solid var(--rcui-color-border);
+  background: var(--rcui-color-bg-container);
   line-height: 1;
   transition:
-    color var(--rc-duration) var(--rc-easing),
-    border-color var(--rc-duration) var(--rc-easing),
-    background-color var(--rc-duration) var(--rc-easing),
-    transform 0.12s var(--rc-ease-out);
+    color var(--rcui-duration) var(--rcui-easing),
+    border-color var(--rcui-duration) var(--rcui-easing),
+    background-color var(--rcui-duration) var(--rcui-easing),
+    transform 0.12s var(--rcui-ease-out);
 }
 
-.rc-radio--button:active:not(.rc-radio--disabled) {
+.rcui-radio--button:active:not(.rcui-radio--disabled) {
   transform: scale(0.97);
 }
 
-.rc-radio-group--button > .rc-radio:first-child {
+.rcui-radio-group--button > .rcui-radio:first-child {
   margin-left: 0;
-  border-radius: var(--rc-radius) 0 0 var(--rc-radius);
+  border-radius: var(--rcui-radius) 0 0 var(--rcui-radius);
 }
 
-.rc-radio-group--button > .rc-radio:last-child {
-  border-radius: 0 var(--rc-radius) var(--rc-radius) 0;
+.rcui-radio-group--button > .rcui-radio:last-child {
+  border-radius: 0 var(--rcui-radius) var(--rcui-radius) 0;
 }
 
-.rc-radio-group--button > .rc-radio:only-child {
-  border-radius: var(--rc-radius);
+.rcui-radio-group--button > .rcui-radio:only-child {
+  border-radius: var(--rcui-radius);
 }
 
-.rc-radio--button .rc-radio__control {
+.rcui-radio--button .rcui-radio__control {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -148,53 +148,53 @@
   border-radius: inherit;
 }
 
-.rc-radio--button .rc-radio__mark {
+.rcui-radio--button .rcui-radio__mark {
   display: none;
 }
 
-.rc-radio--button .rc-radio__label {
+.rcui-radio--button .rcui-radio__label {
   position: relative;
   z-index: 1;
 }
 
-.rc-radio--button:hover {
-  color: var(--rc-color-primary);
-  border-color: var(--rc-color-primary);
+.rcui-radio--button:hover {
+  color: var(--rcui-color-primary);
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-radio--button.rc-radio--checked {
+.rcui-radio--button.rcui-radio--checked {
   z-index: 1;
-  color: var(--rc-color-primary);
-  border-color: var(--rc-color-primary);
+  color: var(--rcui-color-primary);
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-radio--button.rc-radio--solid.rc-radio--checked {
-  color: var(--rc-color-text-inverse);
-  background: var(--rc-color-primary);
-  border-color: var(--rc-color-primary);
+.rcui-radio--button.rcui-radio--solid.rcui-radio--checked {
+  color: var(--rcui-color-text-inverse);
+  background: var(--rcui-color-primary);
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-radio--button.rc-radio--disabled,
-.rc-radio--button.rc-radio--disabled.rc-radio--checked {
-  color: var(--rc-color-text-disabled);
-  background: var(--rc-color-bg-disabled);
-  border-color: var(--rc-color-border);
+.rcui-radio--button.rcui-radio--disabled,
+.rcui-radio--button.rcui-radio--disabled.rcui-radio--checked {
+  color: var(--rcui-color-text-disabled);
+  background: var(--rcui-color-bg-disabled);
+  border-color: var(--rcui-color-border);
 }
 
-.rc-radio--button .rc-radio__control:has(.rc-radio__input:focus-visible) {
-  box-shadow: var(--rc-shadow-focus);
+.rcui-radio--button .rcui-radio__control:has(.rcui-radio__input:focus-visible) {
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-radio-group--small .rc-radio--button {
-  height: var(--rc-control-height-sm);
+.rcui-radio-group--small .rcui-radio--button {
+  height: var(--rcui-control-height-sm);
   padding: 0 12px;
-  border-radius: var(--rc-radius-sm);
-  font-size: var(--rc-font-size-sm);
+  border-radius: var(--rcui-radius-sm);
+  font-size: var(--rcui-font-size-sm);
 }
 
-.rc-radio-group--large .rc-radio--button {
-  height: var(--rc-control-height-lg);
+.rcui-radio-group--large .rcui-radio--button {
+  height: var(--rcui-control-height-lg);
   padding: 0 20px;
-  border-radius: var(--rc-radius-md);
-  font-size: var(--rc-font-size-lg);
+  border-radius: var(--rcui-radius-md);
+  font-size: var(--rcui-font-size-lg);
 }

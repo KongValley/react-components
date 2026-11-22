@@ -70,7 +70,7 @@ export function ActionSheet({
       round
       safeArea={safeArea}
       maskClosable={maskClosable}
-      className={cx('rc-action-sheet', className)}
+      className={cx('rcui-action-sheet', className)}
       bodyStyle={{ padding: 0 }}
       onClose={handleDismiss}
       afterClose={afterClose}
@@ -79,17 +79,17 @@ export function ActionSheet({
       aria-label={typeof title === 'string' ? title : 'Action sheet'}
     >
       {heading ? (
-        <div className="rc-action-sheet__header">
+        <div className="rcui-action-sheet__header">
           {title !== undefined ? (
-            <div className="rc-action-sheet__title">{title}</div>
+            <div className="rcui-action-sheet__title">{title}</div>
           ) : null}
           {description !== undefined ? (
-            <div className="rc-action-sheet__description">{description}</div>
+            <div className="rcui-action-sheet__description">{description}</div>
           ) : null}
         </div>
       ) : null}
       <div
-        className="rc-action-sheet__list"
+        className="rcui-action-sheet__list"
         role="group"
         aria-label={typeof title === 'string' ? title : 'Actions'}
       >
@@ -98,20 +98,20 @@ export function ActionSheet({
             key={action.key ?? index}
             type="button"
             className={cx(
-              'rc-action-sheet__item',
-              action.danger && 'rc-action-sheet__item--danger',
-              action.description !== undefined && 'rc-action-sheet__item--detailed',
+              'rcui-action-sheet__item',
+              action.danger && 'rcui-action-sheet__item--danger',
+              action.description !== undefined && 'rcui-action-sheet__item--detailed',
             )}
             disabled={action.disabled}
             onClick={() => handleSelect(action, index)}
           >
             {action.icon !== undefined ? (
-              <span className="rc-action-sheet__icon">{action.icon}</span>
+              <span className="rcui-action-sheet__icon">{action.icon}</span>
             ) : null}
-            <span className="rc-action-sheet__text">
-              <span className="rc-action-sheet__label">{action.text}</span>
+            <span className="rcui-action-sheet__text">
+              <span className="rcui-action-sheet__label">{action.text}</span>
               {action.description !== undefined ? (
-                <span className="rc-action-sheet__desc">{action.description}</span>
+                <span className="rcui-action-sheet__desc">{action.description}</span>
               ) : null}
             </span>
           </button>
@@ -120,7 +120,7 @@ export function ActionSheet({
       {showCancel ? (
         <button
           type="button"
-          className="rc-action-sheet__cancel"
+          className="rcui-action-sheet__cancel"
           onClick={handleDismiss}
         >
           {cancelText}

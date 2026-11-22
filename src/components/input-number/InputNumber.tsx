@@ -142,10 +142,10 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
     return (
       <span
         className={cx(
-          'rc-input-number',
-          size !== 'middle' && `rc-input-number--${size}`,
-          status && `rc-input-number--${status}`,
-          disabled && 'rc-input-number--disabled',
+          'rcui-input-number',
+          size !== 'middle' && `rcui-input-number--${size}`,
+          status && `rcui-input-number--${status}`,
+          disabled && 'rcui-input-number--disabled',
           className,
         )}
         style={style}
@@ -156,7 +156,7 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
           inputMode="decimal"
           autoComplete="off"
           role="spinbutton"
-          className="rc-input-number__inner"
+          className="rcui-input-number__inner"
           value={display}
           disabled={disabled}
           readOnly={readOnly}
@@ -184,11 +184,11 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
           {...rest}
         />
         {controls ? (
-          <span className="rc-input-number__controls" aria-hidden="true">
+          <span className="rcui-input-number__controls" aria-hidden="true">
             <button
               type="button"
               tabIndex={-1}
-              className="rc-input-number__control"
+              className="rcui-input-number__control"
               disabled={upDisabled}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => changeBy(1)}
@@ -198,7 +198,7 @@ export const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(
             <button
               type="button"
               tabIndex={-1}
-              className="rc-input-number__control"
+              className="rcui-input-number__control"
               disabled={downDisabled}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => changeBy(-1)}

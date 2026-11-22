@@ -44,7 +44,7 @@ export const multiDeviceDocs: ComponentDoc[] = [
         prop: 'applyToRoot',
         type: 'boolean',
         defaultValue: 'false',
-        description: '把解析结果写入 <html data-rc-device="...">，便于自定义 CSS。',
+        description: '把解析结果写入 <html data-rcui-device="...">，便于自定义 CSS。',
       },
       {
         prop: 'useDevice()',

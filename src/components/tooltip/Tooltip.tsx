@@ -139,13 +139,13 @@ export function Tooltip({
         anchorRef={triggerRef}
         placement={placement}
         offset={6}
-        className={cx('rc-tooltip', className)}
+        className={cx('rcui-tooltip', className)}
         id={tooltipId}
         role="tooltip"
         {...rest}
       >
-        <div className="rc-tooltip__content">{title}</div>
-        {arrow ? <span className="rc-tooltip__arrow" aria-hidden="true" /> : null}
+        <div className="rcui-tooltip__content">{title}</div>
+        {arrow ? <span className="rcui-tooltip__arrow" aria-hidden="true" /> : null}
       </Popup>
     </>
   );

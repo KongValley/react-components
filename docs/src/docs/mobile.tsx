@@ -35,7 +35,7 @@ export const mobileDocs: ComponentDoc[] = [
       {
         title: '顶部与底部安全区',
         description:
-          '示例通过覆盖 --rc-safe-area-* 变量模拟刘海屏；真机会自动读取设备安全区。',
+          '示例通过覆盖 --rcui-safe-area-* 变量模拟刘海屏；真机会自动读取设备安全区。',
         code: safeAreaBasicCode,
         element: <SafeAreaBasic />,
       },

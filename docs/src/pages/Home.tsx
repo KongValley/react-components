@@ -65,7 +65,7 @@ export function Home() {
         <div className="home-hero__copy">
           <div className="home-hero__meta">
             <Tag color="primary" bordered>
-              v0.3.0
+              v0.4.0
             </Tag>
             <span>零运行时依赖 · 深色模式 · TypeScript</span>
           </div>

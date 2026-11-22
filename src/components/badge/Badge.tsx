@@ -42,7 +42,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
   const badge = hidden ? null : (
     <span
       key={dot ? 'dot' : String(count)}
-      className={cx('rc-badge__count', dot && 'rc-badge__count--dot')}
+      className={cx('rcui-badge__count', dot && 'rcui-badge__count--dot')}
       style={color ? { background: color } : undefined}
     >
       {dot ? null : formatCount(count, overflowCount)}
@@ -53,7 +53,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
     return (
       <span
         ref={ref}
-        className={cx('rc-badge', 'rc-badge--standalone', className)}
+        className={cx('rcui-badge', 'rcui-badge--standalone', className)}
         style={style}
         {...rest}
       >
@@ -65,7 +65,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
   return (
     <span
       ref={ref}
-      className={cx('rc-badge', 'rc-badge--wrapper', className)}
+      className={cx('rcui-badge', 'rcui-badge--wrapper', className)}
       style={style}
       {...rest}
     >

@@ -215,13 +215,13 @@ export function Dropdown({
         anchorRef={triggerRef}
         placement={placement}
         offset={6}
-        className={cx('rc-dropdown', className)}
+        className={cx('rcui-dropdown', className)}
         onMouseEnter={trigger === 'hover' ? hoverOpen : undefined}
         onMouseLeave={trigger === 'hover' ? hoverClose : undefined}
         {...rest}
       >
         <div
-          className="rc-dropdown__menu"
+          className="rcui-dropdown__menu"
           id={menuId}
           role="menu"
           onKeyDown={handleMenuKeyDown}
@@ -231,7 +231,7 @@ export function Dropdown({
               return (
                 <div
                   key={item.key ?? `divider-${index}`}
-                  className="rc-dropdown__divider"
+                  className="rcui-dropdown__divider"
                   role="separator"
                 />
               );
@@ -245,16 +245,16 @@ export function Dropdown({
                 type="button"
                 role="menuitem"
                 className={cx(
-                  'rc-dropdown__item',
-                  item.danger && 'rc-dropdown__item--danger',
+                  'rcui-dropdown__item',
+                  item.danger && 'rcui-dropdown__item--danger',
                 )}
                 disabled={item.disabled}
                 onClick={() => selectItem(item)}
               >
                 {item.icon !== undefined ? (
-                  <span className="rc-dropdown__item-icon">{item.icon}</span>
+                  <span className="rcui-dropdown__item-icon">{item.icon}</span>
                 ) : null}
-                <span className="rc-dropdown__item-label">{item.label}</span>
+                <span className="rcui-dropdown__item-label">{item.label}</span>
               </button>
             );
           })}

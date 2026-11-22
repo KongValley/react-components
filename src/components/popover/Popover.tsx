@@ -126,16 +126,16 @@ export function Popover({
         anchorRef={triggerRef}
         placement={placement}
         offset={8}
-        className={cx('rc-popover', className)}
+        className={cx('rcui-popover', className)}
         id={popoverId}
         role="dialog"
         onMouseEnter={trigger === 'hover' ? hoverOpen : undefined}
         onMouseLeave={trigger === 'hover' ? hoverClose : undefined}
         {...rest}
       >
-        {title !== undefined ? <div className="rc-popover__title">{title}</div> : null}
-        <div className="rc-popover__content">{content}</div>
-        {arrow ? <span className="rc-popover__arrow" aria-hidden="true" /> : null}
+        {title !== undefined ? <div className="rcui-popover__title">{title}</div> : null}
+        <div className="rcui-popover__content">{content}</div>
+        {arrow ? <span className="rcui-popover__arrow" aria-hidden="true" /> : null}
       </Popup>
     </>
   );

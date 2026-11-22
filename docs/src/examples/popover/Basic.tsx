@@ -7,7 +7,7 @@ export default function PopoverBasic() {
         title="项目信息"
         content={
           <div style={{ maxWidth: 240 }}>
-            <p style={{ margin: '0 0 10px', color: 'var(--rc-color-text-secondary)' }}>
+            <p style={{ margin: '0 0 10px', color: 'var(--rcui-color-text-secondary)' }}>
               RC UI 是一套面向企业后台的 React 组件库。
             </p>
             <Space wrap>

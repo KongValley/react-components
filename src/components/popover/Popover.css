@@ -1,55 +1,55 @@
-.rc-popover {
+.rcui-popover {
   max-width: 340px;
   padding: 12px;
-  background: var(--rc-color-bg-elevated);
-  border: 1px solid var(--rc-color-border-secondary);
-  border-radius: var(--rc-radius-md);
-  box-shadow: var(--rc-shadow);
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
-  font-size: var(--rc-font-size);
-  line-height: var(--rc-line-height);
+  background: var(--rcui-color-bg-elevated);
+  border: 1px solid var(--rcui-color-border-secondary);
+  border-radius: var(--rcui-radius-md);
+  box-shadow: var(--rcui-shadow);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
+  font-size: var(--rcui-font-size);
+  line-height: var(--rcui-line-height);
 }
 
-.rc-popover__title {
+.rcui-popover__title {
   margin-bottom: 8px;
-  color: var(--rc-color-text);
+  color: var(--rcui-color-text);
   font-weight: 600;
 }
 
-.rc-popover__content {
-  color: var(--rc-color-text);
+.rcui-popover__content {
+  color: var(--rcui-color-text);
   overflow-wrap: break-word;
 }
 
-.rc-popover__arrow {
+.rcui-popover__arrow {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: var(--rc-color-bg-elevated);
-  border-right: 1px solid var(--rc-color-border-secondary);
-  border-bottom: 1px solid var(--rc-color-border-secondary);
+  background: var(--rcui-color-bg-elevated);
+  border-right: 1px solid var(--rcui-color-border-secondary);
+  border-bottom: 1px solid var(--rcui-color-border-secondary);
   transform: rotate(45deg);
 }
 
-.rc-popup.rc-popover[data-placement^='top'] .rc-popover__arrow {
+.rcui-popup.rcui-popover[data-placement^='top'] .rcui-popover__arrow {
   bottom: -5px;
   left: calc(50% - 4px);
 }
 
-.rc-popup.rc-popover[data-placement^='bottom'] .rc-popover__arrow {
+.rcui-popup.rcui-popover[data-placement^='bottom'] .rcui-popover__arrow {
   top: -5px;
   left: calc(50% - 4px);
   transform: rotate(225deg);
 }
 
-.rc-popup.rc-popover[data-placement^='left'] .rc-popover__arrow {
+.rcui-popup.rcui-popover[data-placement^='left'] .rcui-popover__arrow {
   right: -5px;
   top: calc(50% - 4px);
   transform: rotate(-45deg);
 }
 
-.rc-popup.rc-popover[data-placement^='right'] .rc-popover__arrow {
+.rcui-popup.rcui-popover[data-placement^='right'] .rcui-popover__arrow {
   left: -5px;
   top: calc(50% - 4px);
   transform: rotate(135deg);

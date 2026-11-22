@@ -47,7 +47,7 @@ export function App() {
             <em>React components</em>
           </span>
         </a>
-        <span className="docs-version">v0.3.0</span>
+        <span className="docs-version">v0.4.0</span>
         <div className="docs-header__spacer" />
         <button
           type="button"

@@ -55,9 +55,9 @@ describe('Modal', () => {
     );
 
     const dialog = screen.getByRole('dialog', { name: 'Mobile settings' });
-    expect(dialog).toHaveClass('rc-modal-sheet');
-    expect(dialog).toHaveClass('rc-popup-panel--bottom');
-    expect(document.querySelector('.rc-modal-root')).toBeNull();
+    expect(dialog).toHaveClass('rcui-modal-sheet');
+    expect(dialog).toHaveClass('rcui-popup-panel--bottom');
+    expect(document.querySelector('.rcui-modal-root')).toBeNull();
 
     await userEvent.keyboard('{Escape}');
     expect(onCancel).toHaveBeenCalledTimes(1);
@@ -72,8 +72,8 @@ describe('Modal', () => {
       </ConfigProvider>,
     );
 
-    expect(document.querySelector('.rc-modal')).not.toBeNull();
-    expect(document.querySelector('.rc-modal-sheet')).toBeNull();
+    expect(document.querySelector('.rcui-modal')).not.toBeNull();
+    expect(document.querySelector('.rcui-modal-sheet')).toBeNull();
   });
 
   it('supports imperative Modal.confirm', async () => {

@@ -51,7 +51,7 @@ const LayoutRoot = forwardRef<HTMLDivElement, LayoutProps>(function Layout(
   return (
     <div
       ref={ref}
-      className={cx('rc-layout', withSider && 'rc-layout--has-sider', className)}
+      className={cx('rcui-layout', withSider && 'rcui-layout--has-sider', className)}
       {...rest}
     >
       {children}
@@ -64,7 +64,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
   ref,
 ) {
   return (
-    <header ref={ref} className={cx('rc-layout-header', className)} {...rest}>
+    <header ref={ref} className={cx('rcui-layout-header', className)} {...rest}>
       {children}
     </header>
   );
@@ -75,7 +75,7 @@ export const Content = forwardRef<HTMLElement, ContentProps>(function Content(
   ref,
 ) {
   return (
-    <main ref={ref} className={cx('rc-layout-content', className)} {...rest}>
+    <main ref={ref} className={cx('rcui-layout-content', className)} {...rest}>
       {children}
     </main>
   );
@@ -86,7 +86,7 @@ export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
   ref,
 ) {
   return (
-    <footer ref={ref} className={cx('rc-layout-footer', className)} {...rest}>
+    <footer ref={ref} className={cx('rcui-layout-footer', className)} {...rest}>
       {children}
     </footer>
   );
@@ -120,15 +120,15 @@ const Sider = forwardRef<HTMLElement, SiderProps>(function Sider(
   return (
     <aside
       ref={ref}
-      className={cx('rc-layout-sider', isCollapsed && 'rc-layout-sider--collapsed', className)}
+      className={cx('rcui-layout-sider', isCollapsed && 'rcui-layout-sider--collapsed', className)}
       style={{ width: currentWidth, flex: `0 0 ${typeof currentWidth === 'number' ? `${currentWidth}px` : currentWidth}`, ...style }}
       {...rest}
     >
-      <div className="rc-layout-sider__children">{children}</div>
+      <div className="rcui-layout-sider__children">{children}</div>
       {showTrigger ? (
         <button
           type="button"
-          className="rc-layout-sider__trigger"
+          className="rcui-layout-sider__trigger"
           onClick={() => setCollapsed(!isCollapsed)}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           aria-expanded={!isCollapsed}

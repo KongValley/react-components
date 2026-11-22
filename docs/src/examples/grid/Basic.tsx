@@ -3,10 +3,10 @@ import { Col, Row } from '@lib';
 
 const box: CSSProperties = {
   padding: '12px 8px',
-  border: '1px solid var(--rc-color-primary-border)',
+  border: '1px solid var(--rcui-color-primary-border)',
   borderRadius: 6,
-  background: 'var(--rc-color-primary-bg)',
-  color: 'var(--rc-color-primary)',
+  background: 'var(--rcui-color-primary-bg)',
+  color: 'var(--rcui-color-primary)',
   fontSize: 13,
   textAlign: 'center',
 };

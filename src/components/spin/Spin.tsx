@@ -50,9 +50,9 @@ export const Spin = forwardRef<HTMLDivElement, SpinProps>(function Spin(
   const iconSize = SIZE_MAP[size];
 
   const spinner = visible ? (
-    <div className={cx('rc-spin', `rc-spin--${size}`, className)} role="status" aria-live="polite">
-      <Icon name="loading" spin size={iconSize} className="rc-spin__icon" />
-      {tip !== undefined ? <div className="rc-spin__tip">{tip}</div> : null}
+    <div className={cx('rcui-spin', `rcui-spin--${size}`, className)} role="status" aria-live="polite">
+      <Icon name="loading" spin size={iconSize} className="rcui-spin__icon" />
+      {tip !== undefined ? <div className="rcui-spin__tip">{tip}</div> : null}
     </div>
   ) : null;
 
@@ -63,12 +63,12 @@ export const Spin = forwardRef<HTMLDivElement, SpinProps>(function Spin(
   return (
     <div
       ref={ref}
-      className={cx('rc-spin-wrapper', spinning && 'rc-spin-wrapper--spinning')}
+      className={cx('rcui-spin-wrapper', spinning && 'rcui-spin-wrapper--spinning')}
       aria-busy={spinning || undefined}
       {...rest}
     >
-      <div className="rc-spin-wrapper__content">{children}</div>
-      {spinner ? <div className="rc-spin-wrapper__overlay">{spinner}</div> : null}
+      <div className="rcui-spin-wrapper__content">{children}</div>
+      {spinner ? <div className="rcui-spin-wrapper__overlay">{spinner}</div> : null}
     </div>
   );
 });

@@ -22,17 +22,17 @@ export const CellGroup = forwardRef<HTMLDivElement, CellGroupProps>(function Cel
     <div
       {...rest}
       ref={ref}
-      className={cx('rc-cell-group', inset && 'rc-cell-group--inset', className)}
+      className={cx('rcui-cell-group', inset && 'rcui-cell-group--inset', className)}
     >
       {title !== undefined || description !== undefined ? (
-        <div className="rc-cell-group__header">
-          {title !== undefined ? <div className="rc-cell-group__title">{title}</div> : null}
+        <div className="rcui-cell-group__header">
+          {title !== undefined ? <div className="rcui-cell-group__title">{title}</div> : null}
           {description !== undefined ? (
-            <div className="rc-cell-group__description">{description}</div>
+            <div className="rcui-cell-group__description">{description}</div>
           ) : null}
         </div>
       ) : null}
-      <div className="rc-cell-group__body">{children}</div>
+      <div className="rcui-cell-group__body">{children}</div>
     </div>
   );
 });

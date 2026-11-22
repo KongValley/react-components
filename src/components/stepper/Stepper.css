@@ -1,25 +1,25 @@
-.rc-stepper {
+.rcui-stepper {
   display: inline-flex;
   align-items: stretch;
   box-sizing: border-box;
   height: 32px;
   overflow: hidden;
-  border: 1px solid var(--rc-color-border);
-  border-radius: var(--rc-radius);
-  background: var(--rc-color-bg-container);
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
+  border: 1px solid var(--rcui-color-border);
+  border-radius: var(--rcui-radius);
+  background: var(--rcui-color-bg-container);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
   transition:
-    border-color var(--rc-duration) var(--rc-easing),
-    box-shadow var(--rc-duration) var(--rc-easing);
+    border-color var(--rcui-duration) var(--rcui-easing),
+    box-shadow var(--rcui-duration) var(--rcui-easing);
 }
 
-.rc-stepper:focus-within {
-  border-color: var(--rc-color-primary);
-  box-shadow: var(--rc-shadow-focus);
+.rcui-stepper:focus-within {
+  border-color: var(--rcui-color-primary);
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-stepper__button {
+.rcui-stepper__button {
   display: inline-flex;
   flex: none;
   align-items: center;
@@ -27,46 +27,46 @@
   width: 32px;
   padding: 0;
   border: 0;
-  background: var(--rc-color-fill);
-  color: var(--rc-color-text);
+  background: var(--rcui-color-fill);
+  color: var(--rcui-color-text);
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background-color var(--rc-duration-fast) var(--rc-easing),
-    color var(--rc-duration-fast) var(--rc-easing);
+    background-color var(--rcui-duration-fast) var(--rcui-easing),
+    color var(--rcui-duration-fast) var(--rcui-easing);
 }
 
-.rc-stepper__button:hover:not(:disabled) {
-  background: var(--rc-color-fill-hover);
-  color: var(--rc-color-primary);
+.rcui-stepper__button:hover:not(:disabled) {
+  background: var(--rcui-color-fill-hover);
+  color: var(--rcui-color-primary);
 }
 
-.rc-stepper__button:active:not(:disabled) {
-  background: var(--rc-color-border-secondary);
+.rcui-stepper__button:active:not(:disabled) {
+  background: var(--rcui-color-border-secondary);
 }
 
-.rc-stepper__button:disabled {
-  color: var(--rc-color-text-disabled);
+.rcui-stepper__button:disabled {
+  color: var(--rcui-color-text-disabled);
   cursor: not-allowed;
 }
 
-.rc-stepper__button:focus-visible {
-  outline: 2px solid var(--rc-color-primary);
+.rcui-stepper__button:focus-visible {
+  outline: 2px solid var(--rcui-color-primary);
   outline-offset: -3px;
 }
 
-.rc-stepper__input {
+.rcui-stepper__input {
   box-sizing: border-box;
   width: 44px;
   min-width: 36px;
   padding: 0 2px;
   border: 0;
-  border-right: 1px solid var(--rc-color-border-secondary);
-  border-left: 1px solid var(--rc-color-border-secondary);
+  border-right: 1px solid var(--rcui-color-border-secondary);
+  border-left: 1px solid var(--rcui-color-border-secondary);
   outline: none;
   background: transparent;
-  color: var(--rc-color-text);
+  color: var(--rcui-color-text);
   font-family: inherit;
   font-size: 14px;
   font-variant-numeric: tabular-nums;
@@ -75,18 +75,18 @@
   appearance: textfield;
 }
 
-.rc-stepper__input::-webkit-outer-spin-button,
-.rc-stepper__input::-webkit-inner-spin-button {
+.rcui-stepper__input::-webkit-outer-spin-button,
+.rcui-stepper__input::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
   appearance: none;
 }
 
-.rc-stepper__input:disabled {
-  color: var(--rc-color-text-disabled);
+.rcui-stepper__input:disabled {
+  color: var(--rcui-color-text-disabled);
   cursor: not-allowed;
 }
 
-.rc-stepper--disabled {
+.rcui-stepper--disabled {
   opacity: 0.6;
 }

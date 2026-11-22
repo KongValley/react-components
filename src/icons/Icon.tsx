@@ -184,7 +184,7 @@ export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
   return (
     <svg
       ref={ref}
-      className={cx('rc-icon', spin && 'rc-icon--spin', className)}
+      className={cx('rcui-icon', spin && 'rcui-icon--spin', className)}
       width={size}
       height={size}
       viewBox="0 0 24 24"

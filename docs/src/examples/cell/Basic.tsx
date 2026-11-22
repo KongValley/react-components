@@ -44,7 +44,7 @@ export default function CellBasic() {
             arrow
             onClick={() => message.success('缓存已清理')}
           />
-          <Cell title="当前版本" value="0.3.0" disabled />
+          <Cell title="当前版本" value="0.4.0" disabled />
         </CellGroup>
       </div>
     </MobileFrame>

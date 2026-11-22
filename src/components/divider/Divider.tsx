@@ -32,18 +32,18 @@ export const Divider = forwardRef<HTMLDivElement, DividerProps>(function Divider
       role="separator"
       aria-orientation={vertical ? 'vertical' : 'horizontal'}
       className={cx(
-        'rc-divider',
-        vertical && 'rc-divider--vertical',
-        !vertical && 'rc-divider--horizontal',
-        dashed && 'rc-divider--dashed',
-        hasText && 'rc-divider--with-text',
-        hasText && `rc-divider--${orientation}`,
-        plain && 'rc-divider--plain',
+        'rcui-divider',
+        vertical && 'rcui-divider--vertical',
+        !vertical && 'rcui-divider--horizontal',
+        dashed && 'rcui-divider--dashed',
+        hasText && 'rcui-divider--with-text',
+        hasText && `rcui-divider--${orientation}`,
+        plain && 'rcui-divider--plain',
         className,
       )}
       {...rest}
     >
-      {hasText ? <span className="rc-divider__text">{children}</span> : null}
+      {hasText ? <span className="rcui-divider__text">{children}</span> : null}
     </div>
   );
 });

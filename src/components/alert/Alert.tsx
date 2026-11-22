@@ -77,31 +77,31 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
       ref={ref}
       role="alert"
       className={cx(
-        'rc-alert',
-        `rc-alert--${type}`,
-        description !== undefined && 'rc-alert--with-description',
-        banner && 'rc-alert--banner',
-        phase === 'closing' && 'rc-alert--closing',
+        'rcui-alert',
+        `rcui-alert--${type}`,
+        description !== undefined && 'rcui-alert--with-description',
+        banner && 'rcui-alert--banner',
+        phase === 'closing' && 'rcui-alert--closing',
         className,
       )}
       {...rest}
     >
       {showIcon ? (
-        <span className="rc-alert__icon">
+        <span className="rcui-alert__icon">
           {icon ?? <Icon name={TYPE_ICON[type]} size={16} />}
         </span>
       ) : null}
-      <div className="rc-alert__body">
-        <div className="rc-alert__message">{message}</div>
+      <div className="rcui-alert__body">
+        <div className="rcui-alert__message">{message}</div>
         {description !== undefined ? (
-          <div className="rc-alert__description">{description}</div>
+          <div className="rcui-alert__description">{description}</div>
         ) : null}
       </div>
-      {action !== undefined ? <div className="rc-alert__action">{action}</div> : null}
+      {action !== undefined ? <div className="rcui-alert__action">{action}</div> : null}
       {closable ? (
         <button
           type="button"
-          className="rc-alert__close"
+          className="rcui-alert__close"
           aria-label="Close alert"
           onClick={handleClose}
         >

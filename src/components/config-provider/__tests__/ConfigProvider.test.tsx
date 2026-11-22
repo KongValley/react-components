@@ -35,8 +35,8 @@ describe('ConfigProvider', () => {
       </ConfigProvider>,
     );
 
-    expect(document.documentElement.getAttribute('data-rc-device')).toBe('mobile');
+    expect(document.documentElement.getAttribute('data-rcui-device')).toBe('mobile');
     unmount();
-    expect(document.documentElement.hasAttribute('data-rc-device')).toBe(false);
+    expect(document.documentElement.hasAttribute('data-rcui-device')).toBe(false);
   });
 });

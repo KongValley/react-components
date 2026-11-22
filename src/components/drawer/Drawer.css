@@ -1,37 +1,37 @@
-.rc-drawer-root {
+.rcui-drawer-root {
   position: fixed;
   inset: 0;
-  z-index: var(--rc-z-index-modal);
+  z-index: var(--rcui-z-index-modal);
 }
 
-.rc-drawer-mask {
+.rcui-drawer-mask {
   position: fixed;
   inset: 0;
-  background: var(--rc-color-mask);
+  background: var(--rcui-color-mask);
   opacity: 0;
-  transition: opacity 0.2s var(--rc-ease-out);
+  transition: opacity 0.2s var(--rcui-ease-out);
 }
 
-.rc-drawer-mask--active {
+.rcui-drawer-mask--active {
   opacity: 1;
 }
 
-.rc-drawer {
+.rcui-drawer {
   position: fixed;
   display: flex;
   flex-direction: column;
   max-width: 100vw;
-  background: var(--rc-color-bg-container);
-  box-shadow: var(--rc-shadow-lg);
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
-  font-size: var(--rc-font-size);
-  transition: transform 0.28s var(--rc-ease-out);
+  background: var(--rcui-color-bg-container);
+  box-shadow: var(--rcui-shadow-lg);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
+  font-size: var(--rcui-font-size);
+  transition: transform 0.28s var(--rcui-ease-out);
   outline: none;
   will-change: transform;
 }
 
-.rc-drawer--right {
+.rcui-drawer--right {
   top: 0;
   right: 0;
   bottom: 0;
@@ -39,7 +39,7 @@
   transform: translateX(100%);
 }
 
-.rc-drawer--left {
+.rcui-drawer--left {
   top: 0;
   left: 0;
   bottom: 0;
@@ -47,7 +47,7 @@
   transform: translateX(-100%);
 }
 
-.rc-drawer--top {
+.rcui-drawer--top {
   top: 0;
   right: 0;
   left: 0;
@@ -55,7 +55,7 @@
   transform: translateY(-100%);
 }
 
-.rc-drawer--bottom {
+.rcui-drawer--bottom {
   right: 0;
   bottom: 0;
   left: 0;
@@ -63,35 +63,35 @@
   transform: translateY(100%);
 }
 
-.rc-drawer--active {
+.rcui-drawer--active {
   transform: none;
 }
 
-.rc-drawer__header {
+.rcui-drawer__header {
   display: flex;
   flex: none;
   align-items: center;
   gap: 8px;
   padding: 14px 20px;
-  border-bottom: 1px solid var(--rc-color-border-secondary);
+  border-bottom: 1px solid var(--rcui-color-border-secondary);
 }
 
-.rc-drawer__title {
+.rcui-drawer__title {
   flex: 1;
   min-width: 0;
-  color: var(--rc-color-text);
-  font-size: var(--rc-font-size-lg);
+  color: var(--rcui-color-text);
+  font-size: var(--rcui-font-size-lg);
   font-weight: 600;
   line-height: 1.4;
   overflow-wrap: break-word;
 }
 
-.rc-drawer__extra {
+.rcui-drawer__extra {
   flex: none;
-  color: var(--rc-color-text-secondary);
+  color: var(--rcui-color-text-secondary);
 }
 
-.rc-drawer__close {
+.rcui-drawer__close {
   display: inline-flex;
   flex: none;
   align-items: center;
@@ -100,42 +100,42 @@
   height: 28px;
   padding: 0;
   border: 0;
-  border-radius: var(--rc-radius-sm);
+  border-radius: var(--rcui-radius-sm);
   background: transparent;
-  color: var(--rc-color-text-tertiary);
+  color: var(--rcui-color-text-tertiary);
   cursor: pointer;
   transition:
-    background-color var(--rc-duration) var(--rc-easing),
-    color var(--rc-duration) var(--rc-easing),
-    transform 0.12s var(--rc-ease-out);
+    background-color var(--rcui-duration) var(--rcui-easing),
+    color var(--rcui-duration) var(--rcui-easing),
+    transform 0.12s var(--rcui-ease-out);
 }
 
-.rc-drawer__close:hover {
-  background: var(--rc-color-fill);
-  color: var(--rc-color-text);
+.rcui-drawer__close:hover {
+  background: var(--rcui-color-fill);
+  color: var(--rcui-color-text);
   transform: scale(1.06);
 }
 
-.rc-drawer__close:focus-visible {
-  outline: 2px solid var(--rc-color-primary);
+.rcui-drawer__close:focus-visible {
+  outline: 2px solid var(--rcui-color-primary);
   outline-offset: 1px;
 }
 
-.rc-drawer__body {
+.rcui-drawer__body {
   flex: 1;
   min-height: 0;
   padding: 20px;
   overflow-y: auto;
-  line-height: var(--rc-line-height);
+  line-height: var(--rcui-line-height);
   overflow-wrap: break-word;
 }
 
-.rc-drawer__footer {
+.rcui-drawer__footer {
   display: flex;
   flex: none;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
   padding: 12px 20px;
-  border-top: 1px solid var(--rc-color-border-secondary);
+  border-top: 1px solid var(--rcui-color-border-secondary);
 }

@@ -77,7 +77,7 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
     <Portal container={container}>
       <div
         ref={mergedRef}
-        className={cx('rc-popup', className)}
+        className={cx('rcui-popup', className)}
         data-placement={floating.placement}
         data-state={active ? 'open' : 'closed'}
         aria-hidden={!open || undefined}

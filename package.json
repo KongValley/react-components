@@ -1,6 +1,6 @@
 {
   "name": "@rc/components",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A lightweight, accessible multi-device React component library with adaptive desktop and mobile components, zero runtime dependencies and CSS variable theming.",
   "keywords": [
     "react",
@@ -21,6 +21,7 @@
       "require": "./dist/index.cjs"
     },
     "./style.css": "./dist/style.css",
+    "./style.layer.css": "./dist/style.layer.css",
     "./package.json": "./package.json"
   },
   "files": [
@@ -32,7 +33,7 @@
   ],
   "scripts": {
     "dev": "vite --config vite.docs.config.ts",
-    "build": "npm run clean && vite build && npm run build:types && node scripts/postbuild.mjs",
+    "build": "npm run clean && vite build && npm run build:types && node scripts/postbuild.mjs && node scripts/layer-css.mjs",
     "build:types": "tsc -p tsconfig.build.json",
     "build:docs": "vite build --config vite.docs.config.ts",
     "preview:docs": "vite preview --config vite.docs.config.ts",

@@ -121,24 +121,24 @@ const InputRoot = forwardRef<HTMLInputElement, InputProps>(function Input(
   return (
     <span
       className={cx(
-        'rc-input',
-        size !== 'middle' && `rc-input--${size}`,
-        status && `rc-input--${status}`,
-        disabled && 'rc-input--disabled',
-        readOnly && 'rc-input--readonly',
-        (addonBefore !== undefined || addonAfter !== undefined) && 'rc-input--group',
+        'rcui-input',
+        size !== 'middle' && `rcui-input--${size}`,
+        status && `rcui-input--${status}`,
+        disabled && 'rcui-input--disabled',
+        readOnly && 'rcui-input--readonly',
+        (addonBefore !== undefined || addonAfter !== undefined) && 'rcui-input--group',
         className,
       )}
       style={style}
     >
       {addonBefore !== undefined ? (
-        <span className="rc-input__addon rc-input__addon--before">{addonBefore}</span>
+        <span className="rcui-input__addon rcui-input__addon--before">{addonBefore}</span>
       ) : null}
-      <span className="rc-input__affix">
-        {prefix !== undefined ? <span className="rc-input__prefix">{prefix}</span> : null}
+      <span className="rcui-input__affix">
+        {prefix !== undefined ? <span className="rcui-input__prefix">{prefix}</span> : null}
         <input
           ref={mergedRef}
-          className="rc-input__inner"
+          className="rcui-input__inner"
           value={current as string | number | undefined}
           defaultValue={undefined}
           onChange={handleChange}
@@ -149,9 +149,9 @@ const InputRoot = forwardRef<HTMLInputElement, InputProps>(function Input(
           aria-invalid={status === 'error' || undefined}
           {...rest}
         />
-        {suffix !== undefined ? <span className="rc-input__suffix">{suffix}</span> : null}
+        {suffix !== undefined ? <span className="rcui-input__suffix">{suffix}</span> : null}
         {showCount ? (
-          <span className="rc-input__count">
+          <span className="rcui-input__count">
             {displayValue.length}
             {maxLength ? ` / ${maxLength}` : ''}
           </span>
@@ -159,7 +159,7 @@ const InputRoot = forwardRef<HTMLInputElement, InputProps>(function Input(
         {showClear ? (
           <button
             type="button"
-            className="rc-input__clear"
+            className="rcui-input__clear"
             aria-label="Clear input"
             tabIndex={-1}
             onMouseDown={(event) => event.preventDefault()}
@@ -170,7 +170,7 @@ const InputRoot = forwardRef<HTMLInputElement, InputProps>(function Input(
         ) : null}
       </span>
       {addonAfter !== undefined ? (
-        <span className="rc-input__addon rc-input__addon--after">{addonAfter}</span>
+        <span className="rcui-input__addon rcui-input__addon--after">{addonAfter}</span>
       ) : null}
     </span>
   );
@@ -229,18 +229,18 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(function TextAre
   return (
     <span
       className={cx(
-        'rc-textarea',
-        size !== 'middle' && `rc-textarea--${size}`,
-        status && `rc-textarea--${status}`,
-        disabled && 'rc-textarea--disabled',
-        autoSize && 'rc-textarea--autosize',
+        'rcui-textarea',
+        size !== 'middle' && `rcui-textarea--${size}`,
+        status && `rcui-textarea--${status}`,
+        disabled && 'rcui-textarea--disabled',
+        autoSize && 'rcui-textarea--autosize',
         className,
       )}
       style={style}
     >
       <textarea
         ref={mergedRef}
-        className="rc-textarea__inner"
+        className="rcui-textarea__inner"
         value={current as string | number | undefined}
         defaultValue={undefined}
         onChange={handleChange}
@@ -251,7 +251,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(function TextAre
         {...rest}
       />
       {showCount ? (
-        <span className="rc-textarea__count">
+        <span className="rcui-textarea__count">
           {displayValue.length}
           {maxLength ? ` / ${maxLength}` : ''}
         </span>
@@ -269,7 +269,7 @@ const Password = forwardRef<HTMLInputElement, PasswordProps>(function Password(
   const toggle = visibilityToggle ? (
     <button
       type="button"
-      className="rc-input__action"
+      className="rcui-input__action"
       aria-label={visible ? 'Hide password' : 'Show password'}
       aria-pressed={visible}
       tabIndex={-1}

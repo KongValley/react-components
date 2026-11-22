@@ -1,17 +1,17 @@
-.rc-checkbox {
+.rcui-checkbox {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
-  font-size: var(--rc-font-size);
-  line-height: var(--rc-line-height);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
+  font-size: var(--rcui-font-size);
+  line-height: var(--rcui-line-height);
   cursor: pointer;
   user-select: none;
 }
 
-.rc-checkbox__box {
+.rcui-checkbox__box {
   position: relative;
   display: inline-flex;
   flex: none;
@@ -19,21 +19,21 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  background: var(--rc-color-bg-container);
-  border: 1px solid var(--rc-color-border-strong);
-  border-radius: var(--rc-radius-sm);
+  background: var(--rcui-color-bg-container);
+  border: 1px solid var(--rcui-color-border-strong);
+  border-radius: var(--rcui-radius-sm);
   transition:
-    background-color var(--rc-duration) var(--rc-easing),
-    border-color var(--rc-duration) var(--rc-easing),
-    box-shadow 0.16s var(--rc-ease-out),
-    transform 0.12s var(--rc-ease-out);
+    background-color var(--rcui-duration) var(--rcui-easing),
+    border-color var(--rcui-duration) var(--rcui-easing),
+    box-shadow 0.16s var(--rcui-ease-out),
+    transform 0.12s var(--rcui-ease-out);
 }
 
-.rc-checkbox:active:not(.rc-checkbox--disabled) .rc-checkbox__box {
+.rcui-checkbox:active:not(.rcui-checkbox--disabled) .rcui-checkbox__box {
   transform: scale(0.9);
 }
 
-.rc-checkbox__input {
+.rcui-checkbox__input {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -43,7 +43,7 @@
   cursor: inherit;
 }
 
-.rc-checkbox__mark {
+.rcui-checkbox__mark {
   position: absolute;
   inset: 0;
   display: flex;
@@ -53,65 +53,65 @@
   opacity: 0;
   transform: scale(0.4);
   transition:
-    opacity 0.14s var(--rc-ease-out),
-    transform 0.22s var(--rc-ease-spring);
+    opacity 0.14s var(--rcui-ease-out),
+    transform 0.22s var(--rcui-ease-spring);
   pointer-events: none;
 }
 
-.rc-checkbox:hover .rc-checkbox__box {
-  border-color: var(--rc-color-primary);
+.rcui-checkbox:hover .rcui-checkbox__box {
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-checkbox__box:has(.rc-checkbox__input:focus-visible) {
-  box-shadow: var(--rc-shadow-focus);
+.rcui-checkbox__box:has(.rcui-checkbox__input:focus-visible) {
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-checkbox--checked .rc-checkbox__box,
-.rc-checkbox--indeterminate .rc-checkbox__box {
-  background: var(--rc-color-primary);
-  border-color: var(--rc-color-primary);
+.rcui-checkbox--checked .rcui-checkbox__box,
+.rcui-checkbox--indeterminate .rcui-checkbox__box {
+  background: var(--rcui-color-primary);
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-checkbox--checked .rc-checkbox__mark,
-.rc-checkbox--indeterminate .rc-checkbox__mark {
+.rcui-checkbox--checked .rcui-checkbox__mark,
+.rcui-checkbox--indeterminate .rcui-checkbox__mark {
   opacity: 1;
   transform: scale(1);
 }
 
-.rc-checkbox__label {
+.rcui-checkbox__label {
   min-width: 0;
 }
 
-.rc-checkbox--disabled,
-.rc-checkbox--disabled:hover {
-  color: var(--rc-color-text-disabled);
+.rcui-checkbox--disabled,
+.rcui-checkbox--disabled:hover {
+  color: var(--rcui-color-text-disabled);
   cursor: not-allowed;
 }
 
-.rc-checkbox--disabled .rc-checkbox__box,
-.rc-checkbox--disabled:hover .rc-checkbox__box {
-  background: var(--rc-color-bg-disabled);
-  border-color: var(--rc-color-border);
+.rcui-checkbox--disabled .rcui-checkbox__box,
+.rcui-checkbox--disabled:hover .rcui-checkbox__box {
+  background: var(--rcui-color-bg-disabled);
+  border-color: var(--rcui-color-border);
 }
 
-.rc-checkbox--disabled.rc-checkbox--checked .rc-checkbox__box,
-.rc-checkbox--disabled.rc-checkbox--indeterminate .rc-checkbox__box {
-  background: var(--rc-color-border-strong);
-  border-color: var(--rc-color-border-strong);
+.rcui-checkbox--disabled.rcui-checkbox--checked .rcui-checkbox__box,
+.rcui-checkbox--disabled.rcui-checkbox--indeterminate .rcui-checkbox__box {
+  background: var(--rcui-color-border-strong);
+  border-color: var(--rcui-color-border-strong);
 }
 
-.rc-checkbox--disabled .rc-checkbox__mark {
-  color: var(--rc-color-bg-container);
+.rcui-checkbox--disabled .rcui-checkbox__mark {
+  color: var(--rcui-color-bg-container);
 }
 
 /* ---- group ---- */
-.rc-checkbox-group {
+.rcui-checkbox-group {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 8px 16px;
 }
 
-.rc-checkbox-group--vertical {
+.rcui-checkbox-group--vertical {
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 8px;

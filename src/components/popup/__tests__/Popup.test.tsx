@@ -27,7 +27,7 @@ describe('Popup', () => {
       </Popup>,
     );
 
-    const mask = document.querySelector('.rc-popup-mask');
+    const mask = document.querySelector('.rcui-popup-mask');
     expect(mask).not.toBeNull();
     fireEvent.click(mask as Element);
     expect(onClose).toHaveBeenCalledTimes(1);

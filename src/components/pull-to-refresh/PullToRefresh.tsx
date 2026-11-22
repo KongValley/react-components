@@ -259,14 +259,14 @@ export const PullToRefresh = forwardRef<HTMLDivElement, PullToRefreshProps>(
           else if (ref) ref.current = node;
         }}
         className={cx(
-          'rc-pull-refresh',
-          effectiveRefreshing && 'rc-pull-refresh--refreshing',
-          disabled && 'rc-pull-refresh--disabled',
+          'rcui-pull-refresh',
+          effectiveRefreshing && 'rcui-pull-refresh--refreshing',
+          disabled && 'rcui-pull-refresh--disabled',
           className,
         )}
       >
         <div
-          className="rc-pull-refresh__head"
+          className="rcui-pull-refresh__head"
           style={{
             height: distance,
             transition: dragging ? 'none' : undefined,
@@ -274,9 +274,9 @@ export const PullToRefresh = forwardRef<HTMLDivElement, PullToRefreshProps>(
           role="status"
           aria-live="polite"
         >
-          <div className="rc-pull-refresh__indicator">
+          <div className="rcui-pull-refresh__indicator">
             <span
-              className="rc-pull-refresh__spinner"
+              className="rcui-pull-refresh__spinner"
               style={
                 effectiveRefreshing
                   ? undefined
@@ -289,11 +289,11 @@ export const PullToRefresh = forwardRef<HTMLDivElement, PullToRefreshProps>(
                 spin={effectiveRefreshing}
               />
             </span>
-            <span className="rc-pull-refresh__text">{statusText}</span>
+            <span className="rcui-pull-refresh__text">{statusText}</span>
           </div>
         </div>
         <div
-          className="rc-pull-refresh__content"
+          className="rcui-pull-refresh__content"
           style={{
             transform: `translate3d(0, ${distance}px, 0)`,
             transition: dragging ? 'none' : undefined,

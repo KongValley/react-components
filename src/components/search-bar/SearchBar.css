@@ -1,50 +1,50 @@
-.rc-search-bar {
+.rcui-search-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--rc-font-family);
+  font-family: var(--rcui-font-family);
 }
 
-.rc-search-bar__field {
+.rcui-search-bar__field {
   display: flex;
   flex: 1;
   align-items: center;
   gap: 6px;
   box-sizing: border-box;
   min-width: 0;
-  height: var(--rc-control-height);
+  height: var(--rcui-control-height);
   padding: 0 12px;
   border: 1px solid transparent;
-  border-radius: var(--rc-radius-full);
-  background: var(--rc-color-fill);
+  border-radius: var(--rcui-radius-full);
+  background: var(--rcui-color-fill);
   transition:
-    background-color var(--rc-duration) var(--rc-easing),
-    border-color var(--rc-duration) var(--rc-easing),
-    box-shadow var(--rc-duration) var(--rc-easing);
+    background-color var(--rcui-duration) var(--rcui-easing),
+    border-color var(--rcui-duration) var(--rcui-easing),
+    box-shadow var(--rcui-duration) var(--rcui-easing);
 }
 
-.rc-search-bar:focus-within .rc-search-bar__field {
-  border-color: var(--rc-color-primary);
-  background: var(--rc-color-bg-container);
-  box-shadow: var(--rc-shadow-focus);
+.rcui-search-bar:focus-within .rcui-search-bar__field {
+  border-color: var(--rcui-color-primary);
+  background: var(--rcui-color-bg-container);
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-search-bar__icon {
+.rcui-search-bar__icon {
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  color: var(--rc-color-text-tertiary);
+  color: var(--rcui-color-text-tertiary);
 }
 
-.rc-search-bar__input {
+.rcui-search-bar__input {
   flex: 1;
   min-width: 0;
   padding: 0;
   border: 0;
   outline: none;
   background: transparent;
-  color: var(--rc-color-text);
+  color: var(--rcui-color-text);
   font-family: inherit;
   font-size: 14px;
   line-height: 1.4;
@@ -52,17 +52,17 @@
   appearance: none;
 }
 
-.rc-search-bar__input::placeholder {
-  color: var(--rc-color-text-tertiary);
+.rcui-search-bar__input::placeholder {
+  color: var(--rcui-color-text-tertiary);
 }
 
-.rc-search-bar__input::-webkit-search-cancel-button,
-.rc-search-bar__input::-webkit-search-decoration {
+.rcui-search-bar__input::-webkit-search-cancel-button,
+.rcui-search-bar__input::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
 
-.rc-search-bar__clear {
+.rcui-search-bar__clear {
   display: inline-flex;
   flex: none;
   align-items: center;
@@ -71,51 +71,51 @@
   height: 18px;
   padding: 0;
   border: 0;
-  border-radius: var(--rc-radius-full);
-  background: var(--rc-color-border-strong);
-  color: var(--rc-color-bg-container);
+  border-radius: var(--rcui-radius-full);
+  background: var(--rcui-color-border-strong);
+  color: var(--rcui-color-bg-container);
   cursor: pointer;
-  animation: rc-pop-in 0.16s var(--rc-ease-spring);
-  transition: transform var(--rc-duration-fast) var(--rc-ease-out);
+  animation: rcui-pop-in 0.16s var(--rcui-ease-spring);
+  transition: transform var(--rcui-duration-fast) var(--rcui-ease-out);
 }
 
-.rc-search-bar__clear:hover {
+.rcui-search-bar__clear:hover {
   transform: scale(1.1);
 }
 
-.rc-search-bar__clear:active {
+.rcui-search-bar__clear:active {
   transform: scale(0.9);
 }
 
-.rc-search-bar__clear:focus-visible {
-  outline: 2px solid var(--rc-color-primary);
+.rcui-search-bar__clear:focus-visible {
+  outline: 2px solid var(--rcui-color-primary);
   outline-offset: 2px;
 }
 
-.rc-search-bar__cancel {
+.rcui-search-bar__cancel {
   flex: none;
-  height: var(--rc-control-height);
+  height: var(--rcui-control-height);
   padding: 0 2px;
   border: 0;
   background: transparent;
-  color: var(--rc-color-primary);
+  color: var(--rcui-color-primary);
   font-family: inherit;
   font-size: 14px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: opacity var(--rc-duration) var(--rc-easing);
+  transition: opacity var(--rcui-duration) var(--rcui-easing);
 }
 
-.rc-search-bar__cancel:active {
+.rcui-search-bar__cancel:active {
   opacity: 0.6;
 }
 
-.rc-search-bar__cancel:focus-visible {
-  outline: 2px solid var(--rc-color-primary);
+.rcui-search-bar__cancel:focus-visible {
+  outline: 2px solid var(--rcui-color-primary);
   outline-offset: 2px;
-  border-radius: var(--rc-radius-sm);
+  border-radius: var(--rcui-radius-sm);
 }
 
-.rc-search-bar--disabled {
+.rcui-search-bar--disabled {
   opacity: 0.6;
 }

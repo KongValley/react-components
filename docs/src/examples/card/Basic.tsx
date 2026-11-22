@@ -23,7 +23,7 @@ export default function CardBasic() {
           </span>,
         ]}
       >
-        <p style={{ margin: '0 0 12px', color: 'var(--rc-color-text-secondary)', lineHeight: 1.7 }}>
+        <p style={{ margin: '0 0 12px', color: 'var(--rcui-color-text-secondary)', lineHeight: 1.7 }}>
           使用 Card 承载一组相关信息，支持页头、操作区和底部操作栏。
         </p>
         <Tag color="success">进行中</Tag>
@@ -35,7 +35,7 @@ export default function CardBasic() {
           <div
             style={{
               height: 110,
-              background: 'linear-gradient(135deg, var(--rc-color-primary), #8b5cf6)',
+              background: 'linear-gradient(135deg, var(--rcui-color-primary), #8b5cf6)',
             }}
           />
         }

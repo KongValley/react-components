@@ -34,7 +34,7 @@ describe('PullToRefresh', () => {
         <div>List content</div>
       </PullToRefresh>,
     );
-    const root = container.querySelector('.rc-pull-refresh');
+    const root = container.querySelector('.rcui-pull-refresh');
     expect(root).not.toBeNull();
 
     touchStart(root as Element, 100);
@@ -57,7 +57,7 @@ describe('PullToRefresh', () => {
         <div>List content</div>
       </PullToRefresh>,
     );
-    const root = container.querySelector('.rc-pull-refresh') as Element;
+    const root = container.querySelector('.rcui-pull-refresh') as Element;
 
     touchStart(root, 100);
     touchMove(root, 130);
@@ -73,7 +73,7 @@ describe('PullToRefresh', () => {
         <div>List content</div>
       </PullToRefresh>,
     );
-    const root = container.querySelector('.rc-pull-refresh') as Element;
+    const root = container.querySelector('.rcui-pull-refresh') as Element;
 
     touchStart(root, 100);
     touchMove(root, 240);

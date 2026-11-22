@@ -10,7 +10,7 @@ export interface SafeAreaProps extends HTMLAttributes<HTMLDivElement> {
 
 /**
  * Padding placeholder for notches and home indicators. Uses
- * `env(safe-area-inset-*)` through the shared `--rc-safe-area-*` tokens, so it
+ * `env(safe-area-inset-*)` through the shared `--rcui-safe-area-*` tokens, so it
  * degrades to 0px on devices without insets.
  */
 export const SafeArea = forwardRef<HTMLDivElement, SafeAreaProps>(function SafeArea(
@@ -20,7 +20,7 @@ export const SafeArea = forwardRef<HTMLDivElement, SafeAreaProps>(function SafeA
   return (
     <div
       ref={ref}
-      className={cx('rc-safe-area', `rc-safe-area--${position}`, className)}
+      className={cx('rcui-safe-area', `rcui-safe-area--${position}`, className)}
       {...rest}
     />
   );

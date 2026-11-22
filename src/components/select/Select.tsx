@@ -368,7 +368,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
     if (event.defaultPrevented || disabled) return;
     const target = event.target as HTMLElement;
     if (target.closest('[data-select-remove]')) return;
-    if (target.closest('.rc-select__search')) {
+    if (target.closest('.rcui-select__search')) {
       if (!open) openDropdown();
       return;
     }
@@ -388,12 +388,12 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
         {...rest}
         ref={mergedTriggerRef}
         className={cx(
-          'rc-select',
-          `rc-select--${mode}`,
-          size !== 'middle' && `rc-select--${size}`,
-          status && `rc-select--${status}`,
-          disabled && 'rc-select--disabled',
-          open && 'rc-select--open',
+          'rcui-select',
+          `rcui-select--${mode}`,
+          size !== 'middle' && `rcui-select--${size}`,
+          status && `rcui-select--${status}`,
+          disabled && 'rcui-select--disabled',
+          open && 'rcui-select--open',
           className,
         )}
         style={style}
@@ -411,19 +411,19 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
         onClick={handleTriggerClick}
         onKeyDown={handleKeyDown}
       >
-        <div className="rc-select__selector">
+        <div className="rcui-select__selector">
           {isMultiple ? (
             <>
               {selectedValues.map((item) => {
                 const option = optionMap.get(item);
                 return (
-                  <span key={String(item)} className="rc-select__tag">
-                    <span className="rc-select__tag-label">{option?.label ?? item}</span>
+                  <span key={String(item)} className="rcui-select__tag">
+                    <span className="rcui-select__tag-label">{option?.label ?? item}</span>
                     {!disabled ? (
                       <button
                         type="button"
                         data-select-remove
-                        className="rc-select__tag-remove"
+                        className="rcui-select__tag-remove"
                         tabIndex={-1}
                         aria-label={`Remove ${labelToText(option?.label, item)}`}
                         onMouseDown={(event) => {
@@ -444,7 +444,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
               {showSearch ? (
                 <input
                   ref={searchRef}
-                  className="rc-select__search"
+                  className="rcui-select__search"
                   value={search}
                   placeholder={hasValue ? undefined : typeof placeholder === 'string' ? placeholder : undefined}
                   disabled={disabled}
@@ -454,13 +454,13 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
                   onChange={(event) => handleSearchChange(event.target.value)}
                 />
               ) : !hasValue ? (
-                <span className="rc-select__placeholder">{placeholder}</span>
+                <span className="rcui-select__placeholder">{placeholder}</span>
               ) : null}
             </>
           ) : showSearch && open ? (
             <input
               ref={searchRef}
-              className="rc-select__search"
+              className="rcui-select__search"
               value={search}
               placeholder={
                 hasValue
@@ -478,20 +478,20 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
           ) : (
             <span
               className={cx(
-                'rc-select__value',
-                !hasValue && 'rc-select__placeholder',
+                'rcui-select__value',
+                !hasValue && 'rcui-select__placeholder',
               )}
             >
               {hasValue ? selectedLabel : placeholder}
             </span>
           )}
         </div>
-        <span className="rc-select__suffix">
+        <span className="rcui-select__suffix">
           {loading ? <Icon name="loading" spin size={14} /> : null}
           {showClear ? (
             <button
               type="button"
-              className="rc-select__clear"
+              className="rcui-select__clear"
               tabIndex={-1}
               aria-label="Clear selection"
               onMouseDown={(event) => {
@@ -506,7 +506,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
               <Icon name="close" size={12} />
             </button>
           ) : null}
-          <Icon name="chevron-down" size={14} className="rc-select__arrow" />
+          <Icon name="chevron-down" size={14} className="rcui-select__arrow" />
         </span>
         {name ? (
           <input
@@ -527,11 +527,11 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
           closable
           maskClosable
           onClose={close}
-          className="rc-select-sheet"
+          className="rcui-select-sheet"
           bodyStyle={{ padding: 0 }}
         >
           {showSearch ? (
-            <div className="rc-select-sheet__search">
+            <div className="rcui-select-sheet__search">
               <SearchBar
                 value={search}
                 onChange={handleSearchChange}
@@ -542,21 +542,21 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
             </div>
           ) : null}
           {flatOptions.length === 0 ? (
-            <div className="rc-select-sheet__empty">
+            <div className="rcui-select-sheet__empty">
               {loading ? <Icon name="loading" spin size={14} /> : null}
               {notFoundContent ?? (loading ? 'Loading...' : 'No data')}
             </div>
           ) : (
             <div
-              className="rc-select-sheet__list"
+              className="rcui-select-sheet__list"
               id={`${listboxId}-sheet`}
               role="listbox"
               aria-multiselectable={isMultiple || undefined}
             >
               {filteredGroups.map((group, groupIndex) => (
-                <div className="rc-select-sheet__group" key={groupIndex}>
+                <div className="rcui-select-sheet__group" key={groupIndex}>
                   {group.label !== undefined ? (
-                    <div className="rc-select-sheet__group-label">{group.label}</div>
+                    <div className="rcui-select-sheet__group-label">{group.label}</div>
                   ) : null}
                   {group.options.map((option) => {
                     const selected = isMultiple
@@ -571,13 +571,13 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
                         aria-disabled={option.disabled || undefined}
                         disabled={option.disabled}
                         className={cx(
-                          'rc-select-sheet__option',
-                          selected && 'rc-select-sheet__option--selected',
-                          option.disabled && 'rc-select-sheet__option--disabled',
+                          'rcui-select-sheet__option',
+                          selected && 'rcui-select-sheet__option--selected',
+                          option.disabled && 'rcui-select-sheet__option--disabled',
                         )}
                         onClick={() => selectOption(option)}
                       >
-                        <span className="rc-select-sheet__option-label">{option.label}</span>
+                        <span className="rcui-select-sheet__option-label">{option.label}</span>
                         {selected ? <Icon name="check" size={16} /> : null}
                       </button>
                     );
@@ -587,7 +587,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
             </div>
           )}
           {isMultiple ? (
-            <div className="rc-select-sheet__footer">
+            <div className="rcui-select-sheet__footer">
               <Button
                 onClick={clearValue}
                 disabled={selectedValues.length === 0}
@@ -608,21 +608,21 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
           placement={placement}
           offset={4}
           matchAnchorWidth
-          className="rc-select-dropdown"
+          className="rcui-select-dropdown"
           id={listboxId}
           role="listbox"
           aria-multiselectable={isMultiple || undefined}
         >
           {flatOptions.length === 0 ? (
-            <div className="rc-select-dropdown__empty">
+            <div className="rcui-select-dropdown__empty">
               {loading ? <Icon name="loading" spin size={14} /> : null}
               {notFoundContent ?? (loading ? 'Loading...' : 'No data')}
             </div>
           ) : (
             filteredGroups.map((group, groupIndex) => (
-              <div className="rc-select-dropdown__group" key={groupIndex}>
+              <div className="rcui-select-dropdown__group" key={groupIndex}>
                 {group.label !== undefined ? (
-                  <div className="rc-select-dropdown__group-label">{group.label}</div>
+                  <div className="rcui-select-dropdown__group-label">{group.label}</div>
                 ) : null}
                 {group.options.map((option) => {
                   optionIndex += 1;
@@ -642,15 +642,15 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(function Select(
                       aria-disabled={option.disabled || undefined}
                       data-active={index === activeIndex || undefined}
                       className={cx(
-                        'rc-select-dropdown__option',
-                        selected && 'rc-select-dropdown__option--selected',
-                        option.disabled && 'rc-select-dropdown__option--disabled',
+                        'rcui-select-dropdown__option',
+                        selected && 'rcui-select-dropdown__option--selected',
+                        option.disabled && 'rcui-select-dropdown__option--disabled',
                       )}
                       onMouseDown={(event) => event.preventDefault()}
                       onMouseEnter={() => setActiveIndex(index)}
                       onClick={() => selectOption(option)}
                     >
-                      <span className="rc-select-dropdown__option-label">{option.label}</span>
+                      <span className="rcui-select-dropdown__option-label">{option.label}</span>
                       {selected ? <Icon name="check" size={14} /> : null}
                     </div>
                   );

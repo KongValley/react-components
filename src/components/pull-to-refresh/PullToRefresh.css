@@ -1,22 +1,22 @@
-.rc-pull-refresh {
+.rcui-pull-refresh {
   position: relative;
-  color: var(--rc-color-text);
-  font-family: var(--rc-font-family);
+  color: var(--rcui-color-text);
+  font-family: var(--rcui-font-family);
   overscroll-behavior-y: contain;
 }
 
-.rc-pull-refresh__head {
+.rcui-pull-refresh__head {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   overflow: hidden;
-  color: var(--rc-color-text-tertiary);
+  color: var(--rcui-color-text-tertiary);
   pointer-events: none;
-  transition: height 0.28s var(--rc-ease-out);
+  transition: height 0.28s var(--rcui-ease-out);
 }
 
-.rc-pull-refresh__indicator {
+.rcui-pull-refresh__indicator {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -29,20 +29,20 @@
   white-space: nowrap;
 }
 
-.rc-pull-refresh__spinner {
+.rcui-pull-refresh__spinner {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--rc-color-primary);
-  transition: transform 0.18s var(--rc-ease-out);
+  color: var(--rcui-color-primary);
+  transition: transform 0.18s var(--rcui-ease-out);
 }
 
-.rc-pull-refresh__text {
-  color: var(--rc-color-text-tertiary);
+.rcui-pull-refresh__text {
+  color: var(--rcui-color-text-tertiary);
 }
 
-.rc-pull-refresh__content {
+.rcui-pull-refresh__content {
   position: relative;
   will-change: transform;
-  transition: transform 0.28s var(--rc-ease-out);
+  transition: transform 0.28s var(--rcui-ease-out);
 }

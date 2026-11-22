@@ -1,39 +1,39 @@
-.rc-avatar {
+.rcui-avatar {
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--rc-color-fill);
-  color: var(--rc-color-text-secondary);
-  font-family: var(--rc-font-family);
+  background: var(--rcui-color-fill);
+  color: var(--rcui-color-text-secondary);
+  font-family: var(--rcui-font-family);
   font-weight: 500;
   line-height: 1;
   user-select: none;
   vertical-align: middle;
 }
 
-.rc-avatar--circle {
-  border-radius: var(--rc-radius-full);
+.rcui-avatar--circle {
+  border-radius: var(--rcui-radius-full);
 }
 
-.rc-avatar--square {
-  border-radius: var(--rc-radius-md);
+.rcui-avatar--square {
+  border-radius: var(--rcui-radius-md);
 }
 
-.rc-avatar--fallback {
+.rcui-avatar--fallback {
   text-transform: uppercase;
 }
 
-.rc-avatar__image {
+.rcui-avatar__image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: rc-fade-in 0.2s var(--rc-ease-out);
+  animation: rcui-fade-in 0.2s var(--rcui-ease-out);
 }
 
-.rc-avatar__content {
+.rcui-avatar__content {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -43,5 +43,5 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  animation: rc-fade-in 0.18s var(--rc-ease-out);
+  animation: rcui-fade-in 0.18s var(--rcui-ease-out);
 }

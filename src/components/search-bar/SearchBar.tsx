@@ -87,24 +87,24 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function S
   return (
     <form
       className={cx(
-        'rc-search-bar',
-        focused && 'rc-search-bar--focused',
-        disabled && 'rc-search-bar--disabled',
+        'rcui-search-bar',
+        focused && 'rcui-search-bar--focused',
+        disabled && 'rcui-search-bar--disabled',
         className,
       )}
       style={style}
       role="search"
       onSubmit={handleSubmit}
     >
-      <div className="rc-search-bar__field">
-        <span className="rc-search-bar__icon" aria-hidden="true">
+      <div className="rcui-search-bar__field">
+        <span className="rcui-search-bar__icon" aria-hidden="true">
           <Icon name="search" size={16} />
         </span>
         <input
           {...rest}
           ref={mergedRef}
           type="search"
-          className="rc-search-bar__input"
+          className="rcui-search-bar__input"
           value={currentValue}
           placeholder={placeholder}
           disabled={disabled}
@@ -123,7 +123,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function S
         {allowClear && currentValue.length > 0 && !disabled ? (
           <button
             type="button"
-            className="rc-search-bar__clear"
+            className="rcui-search-bar__clear"
             aria-label="Clear search"
             onClick={handleClear}
           >
@@ -134,7 +134,7 @@ export const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(function S
       {showCancel ? (
         <button
           type="button"
-          className="rc-search-bar__cancel"
+          className="rcui-search-bar__cancel"
           onClick={handleCancel}
         >
           {cancelText}

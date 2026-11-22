@@ -15,7 +15,7 @@ export default function AvatarBasic() {
       </Avatar>
       <Avatar src={DATA_IMAGE} alt="RC 用户" />
       <Avatar icon={<Icon name="user" size={16} />} />
-      <Avatar style={{ background: 'var(--rc-color-primary)', color: '#fff' }}>UI</Avatar>
+      <Avatar style={{ background: 'var(--rcui-color-primary)', color: '#fff' }}>UI</Avatar>
     </Space>
   );
 }

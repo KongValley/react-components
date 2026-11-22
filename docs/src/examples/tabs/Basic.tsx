@@ -1,7 +1,7 @@
 import { Badge, Button, Icon, Tabs, Tag } from '@lib';
 
 const panelStyle = {
-  color: 'var(--rc-color-text-secondary)',
+  color: 'var(--rcui-color-text-secondary)',
   lineHeight: 1.8,
   fontSize: 13.5,
 } as const;
@@ -27,7 +27,7 @@ export default function TabsBasic() {
                   概览面板展示项目的核心指标。<Tag color="success">运行正常</Tag>
                 </p>
                 <p style={{ marginBottom: 0 }}>
-                  当前版本 v0.3.0，共 44 个多端组件，支持明暗双主题与设备自适应。
+                  当前版本 v0.4.0，共 44 个多端组件，支持明暗双主题与设备自适应。
                 </p>
               </div>
             ),

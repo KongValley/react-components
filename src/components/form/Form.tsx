@@ -218,10 +218,10 @@ export const FormItem = forwardRef<HTMLDivElement, FormItemProps>(function FormI
     <div
       ref={ref}
       className={cx(
-        'rc-form-item',
-        `rc-form-item--${layout}`,
-        `rc-form-item--label-${labelAlign}`,
-        status && `rc-form-item--${status}`,
+        'rcui-form-item',
+        `rcui-form-item--${layout}`,
+        `rcui-form-item--label-${labelAlign}`,
+        status && `rcui-form-item--${status}`,
         className,
       )}
       style={style}
@@ -229,22 +229,22 @@ export const FormItem = forwardRef<HTMLDivElement, FormItemProps>(function FormI
     >
       {label !== undefined ? (
         <label
-          className="rc-form-item__label"
+          className="rcui-form-item__label"
           htmlFor={name !== undefined ? controlId : undefined}
         >
           {isRequired && requiredMark ? (
-            <span className="rc-form-item__required" aria-hidden="true">
+            <span className="rcui-form-item__required" aria-hidden="true">
               *
             </span>
           ) : null}
           {label}
         </label>
       ) : null}
-      <div className="rc-form-item__control">
-        <div className="rc-form-item__content">
+      <div className="rcui-form-item__control">
+        <div className="rcui-form-item__content">
           {control}
           {hasFeedback && status ? (
-            <span className={cx('rc-form-item__feedback', `rc-form-item__feedback--${status}`)}>
+            <span className={cx('rcui-form-item__feedback', `rcui-form-item__feedback--${status}`)}>
               {FEEDBACK_ICONS[status]}
             </span>
           ) : null}
@@ -255,14 +255,14 @@ export const FormItem = forwardRef<HTMLDivElement, FormItemProps>(function FormI
             id={status === 'error' ? errorId : undefined}
             role={status === 'error' ? 'alert' : undefined}
             className={cx(
-              'rc-form-item__message',
-              status === 'error' && 'rc-form-item__message--error',
+              'rcui-form-item__message',
+              status === 'error' && 'rcui-form-item__message--error',
             )}
           >
             {message}
           </div>
         ) : null}
-        {extra !== undefined ? <div className="rc-form-item__extra">{extra}</div> : null}
+        {extra !== undefined ? <div className="rcui-form-item__extra">{extra}</div> : null}
       </div>
     </div>
   );
@@ -327,7 +327,7 @@ const FormRoot = forwardRef<HTMLFormElement, FormProps>(function Form(
     const width =
       typeof labelWidth === 'number' ? `${labelWidth}px` : labelWidth;
     return {
-      ...(width ? { '--rc-form-label-width': width } : {}),
+      ...(width ? { '--rcui-form-label-width': width } : {}),
       ...style,
     } as CSSProperties;
   }, [labelWidth, style]);
@@ -338,11 +338,11 @@ const FormRoot = forwardRef<HTMLFormElement, FormProps>(function Form(
         ref={ref}
         noValidate
         className={cx(
-          'rc-form',
-          `rc-form--${layout}`,
-          size !== 'middle' && `rc-form--${size}`,
-          disabled && 'rc-form--disabled',
-          labelAlign === 'left' && 'rc-form--label-left',
+          'rcui-form',
+          `rcui-form--${layout}`,
+          size !== 'middle' && `rcui-form--${size}`,
+          disabled && 'rcui-form--disabled',
+          labelAlign === 'left' && 'rcui-form--label-left',
           className,
         )}
         style={formStyle}

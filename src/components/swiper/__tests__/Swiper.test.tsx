@@ -30,7 +30,7 @@ describe('Swiper', () => {
 
   it('supports keyboard navigation', () => {
     const { container, onChange } = renderSwiper();
-    const viewport = container.querySelector('.rc-swiper__viewport');
+    const viewport = container.querySelector('.rcui-swiper__viewport');
     expect(viewport).not.toBeNull();
 
     fireEvent.keyDown(viewport as Element, { key: 'ArrowRight' });
@@ -39,7 +39,7 @@ describe('Swiper', () => {
 
   it('clones edge slides when looping', () => {
     const { container } = renderSwiper({ loop: true });
-    const slides = container.querySelectorAll('.rc-swiper__slide');
+    const slides = container.querySelectorAll('.rcui-swiper__slide');
     expect(slides).toHaveLength(5);
     expect(slides[0]).toHaveAttribute('aria-hidden', 'true');
     expect(slides[4]).toHaveAttribute('aria-hidden', 'true');

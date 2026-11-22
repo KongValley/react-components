@@ -33,10 +33,10 @@ export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(function Brea
     <nav
       ref={ref}
       aria-label="Breadcrumb"
-      className={cx('rc-breadcrumb', className)}
+      className={cx('rcui-breadcrumb', className)}
       {...rest}
     >
-      <ol className="rc-breadcrumb__list">
+      <ol className="rcui-breadcrumb__list">
         {nodes.map((node, index) => {
           const last = index === total - 1;
           let content: ReactNode;
@@ -47,14 +47,14 @@ export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(function Brea
               content = itemRender(item, index, itemList);
             } else if (last) {
               content = (
-                <span className="rc-breadcrumb__current" aria-current="page">
+                <span className="rcui-breadcrumb__current" aria-current="page">
                   {item.title}
                 </span>
               );
             } else if (item.href !== undefined) {
               content = (
                 <a
-                  className="rc-breadcrumb__link"
+                  className="rcui-breadcrumb__link"
                   href={item.href}
                   onClick={item.onClick}
                 >
@@ -62,17 +62,17 @@ export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(function Brea
                 </a>
               );
             } else {
-              content = <span className="rc-breadcrumb__text">{item.title}</span>;
+              content = <span className="rcui-breadcrumb__text">{item.title}</span>;
             }
           } else {
             content = node;
           }
 
           return (
-            <li key={index} className="rc-breadcrumb__item">
+            <li key={index} className="rcui-breadcrumb__item">
               {content}
               {!last ? (
-                <span className="rc-breadcrumb__separator" aria-hidden="true">
+                <span className="rcui-breadcrumb__separator" aria-hidden="true">
                   {separator}
                 </span>
               ) : null}

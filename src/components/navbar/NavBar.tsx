@@ -49,19 +49,19 @@ export const NavBar = forwardRef<HTMLElement, NavBarProps>(function NavBar(
         {...rest}
         ref={ref}
         className={cx(
-          'rc-navbar',
-          fixed && 'rc-navbar--fixed',
-          safeArea && 'rc-navbar--safe-area',
-          border && 'rc-navbar--border',
+          'rcui-navbar',
+          fixed && 'rcui-navbar--fixed',
+          safeArea && 'rcui-navbar--safe-area',
+          border && 'rcui-navbar--border',
           className,
         )}
       >
-        <div className="rc-navbar__inner">
-          <div className="rc-navbar__left">
+        <div className="rcui-navbar__inner">
+          <div className="rcui-navbar__left">
             {showBack ? (
               <button
                 type="button"
-                className="rc-navbar__back"
+                className="rcui-navbar__back"
                 aria-label="Go back"
                 onClick={onBack}
               >
@@ -70,15 +70,15 @@ export const NavBar = forwardRef<HTMLElement, NavBarProps>(function NavBar(
             ) : null}
             {left}
           </div>
-          <div className="rc-navbar__title">{title}</div>
-          <div className="rc-navbar__right">{right}</div>
+          <div className="rcui-navbar__title">{title}</div>
+          <div className="rcui-navbar__right">{right}</div>
         </div>
       </header>
       {showPlaceholder ? (
         <div
           className={cx(
-            'rc-navbar-placeholder',
-            safeArea && 'rc-navbar-placeholder--safe-area',
+            'rcui-navbar-placeholder',
+            safeArea && 'rcui-navbar-placeholder--safe-area',
           )}
           aria-hidden="true"
         />

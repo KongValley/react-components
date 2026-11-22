@@ -146,18 +146,18 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
 
   const panelStyle = {
     ...style,
-    '--rc-popup-drag': `${dragOffset}px`,
+    '--rcui-popup-drag': `${dragOffset}px`,
   } as CSSProperties;
 
   return (
     <Portal container={getContainer?.()}>
       <div
-        className="rc-popup-layer"
+        className="rcui-popup-layer"
         style={zIndex !== undefined ? { zIndex } : undefined}
       >
         {mask ? (
           <div
-            className={cx('rc-popup-mask', active && 'rc-popup-mask--active')}
+            className={cx('rcui-popup-mask', active && 'rcui-popup-mask--active')}
             aria-hidden="true"
             onClick={maskClosable ? onClose : undefined}
           />
@@ -170,12 +170,12 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
             else if (forwardedRef) forwardedRef.current = node;
           }}
           className={cx(
-            'rc-popup-panel',
-            `rc-popup-panel--${position}`,
-            round && 'rc-popup-panel--round',
-            safeArea && 'rc-popup-panel--safe-area',
-            active && 'rc-popup-panel--active',
-            dragging && 'rc-popup-panel--dragging',
+            'rcui-popup-panel',
+            `rcui-popup-panel--${position}`,
+            round && 'rcui-popup-panel--round',
+            safeArea && 'rcui-popup-panel--safe-area',
+            active && 'rcui-popup-panel--active',
+            dragging && 'rcui-popup-panel--dragging',
             className,
           )}
           style={panelStyle}
@@ -186,7 +186,7 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
         >
           {hasHandle ? (
             <div
-              className="rc-popup-panel__handle"
+              className="rcui-popup-panel__handle"
               aria-hidden="true"
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
@@ -195,9 +195,9 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
             />
           ) : null}
           {hasHeader ? (
-            <div className="rc-popup-panel__header">
+            <div className="rcui-popup-panel__header">
               <div
-                className="rc-popup-panel__title"
+                className="rcui-popup-panel__title"
                 id={title !== undefined ? titleId : undefined}
               >
                 {title}
@@ -205,7 +205,7 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
               {closable ? (
                 <button
                   type="button"
-                  className="rc-popup-panel__close"
+                  className="rcui-popup-panel__close"
                   aria-label="Close popup"
                   onClick={onClose}
                 >
@@ -214,7 +214,7 @@ export const Popup = forwardRef<HTMLDivElement, PopupProps>(function Popup(
               ) : null}
             </div>
           ) : null}
-          <div className="rc-popup-panel__body" style={bodyStyle}>
+          <div className="rcui-popup-panel__body" style={bodyStyle}>
             {children}
           </div>
         </div>

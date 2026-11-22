@@ -1,31 +1,31 @@
-.rc-switch {
+.rcui-switch {
   position: relative;
   display: inline-flex;
   align-items: center;
   width: 44px;
   height: 24px;
   padding: 0;
-  border: 1px solid var(--rc-color-border-strong);
-  border-radius: var(--rc-radius-full);
-  background: var(--rc-color-fill);
+  border: 1px solid var(--rcui-color-border-strong);
+  border-radius: var(--rcui-radius-full);
+  background: var(--rcui-color-fill);
   cursor: pointer;
   vertical-align: middle;
   transition:
-    background-color var(--rc-duration) var(--rc-easing),
-    border-color var(--rc-duration) var(--rc-easing),
-    box-shadow var(--rc-duration) var(--rc-easing);
+    background-color var(--rcui-duration) var(--rcui-easing),
+    border-color var(--rcui-duration) var(--rcui-easing),
+    box-shadow var(--rcui-duration) var(--rcui-easing);
 }
 
-.rc-switch:hover {
-  border-color: var(--rc-color-primary);
+.rcui-switch:hover {
+  border-color: var(--rcui-color-primary);
 }
 
-.rc-switch:focus-visible {
+.rcui-switch:focus-visible {
   outline: none;
-  box-shadow: var(--rc-shadow-focus);
+  box-shadow: var(--rcui-shadow-focus);
 }
 
-.rc-switch__handle {
+.rcui-switch__handle {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -36,19 +36,19 @@
   height: 18px;
   border-radius: 50%;
   background: #ffffff;
-  color: var(--rc-color-primary);
+  color: var(--rcui-color-primary);
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
-  --rc-switch-travel: 0px;
-  --rc-switch-scale: 1;
-  transform: translateX(var(--rc-switch-travel)) scale(var(--rc-switch-scale));
-  transition: transform 0.22s var(--rc-ease-spring);
+  --rcui-switch-travel: 0px;
+  --rcui-switch-scale: 1;
+  transform: translateX(var(--rcui-switch-travel)) scale(var(--rcui-switch-scale));
+  transition: transform 0.22s var(--rcui-ease-spring);
 }
 
-.rc-switch:active:not(:disabled) .rc-switch__handle {
-  --rc-switch-scale: 0.9;
+.rcui-switch:active:not(:disabled) .rcui-switch__handle {
+  --rcui-switch-scale: 0.9;
 }
 
-.rc-switch__label {
+.rcui-switch__label {
   position: absolute;
   inset: 0;
   display: flex;
@@ -56,81 +56,81 @@
   justify-content: flex-end;
   overflow: hidden;
   padding: 0 7px 0 23px;
-  color: var(--rc-color-text-secondary);
-  font-size: var(--rc-font-size-sm);
+  color: var(--rcui-color-text-secondary);
+  font-size: var(--rcui-font-size-sm);
   line-height: 1;
   white-space: nowrap;
   pointer-events: none;
 }
 
-.rc-switch--checked {
-  border-color: var(--rc-color-primary);
-  background: var(--rc-color-primary);
+.rcui-switch--checked {
+  border-color: var(--rcui-color-primary);
+  background: var(--rcui-color-primary);
 }
 
-.rc-switch--checked:hover {
-  border-color: var(--rc-color-primary-hover);
-  background: var(--rc-color-primary-hover);
+.rcui-switch--checked:hover {
+  border-color: var(--rcui-color-primary-hover);
+  background: var(--rcui-color-primary-hover);
 }
 
-.rc-switch--checked .rc-switch__handle {
-  --rc-switch-travel: 20px;
+.rcui-switch--checked .rcui-switch__handle {
+  --rcui-switch-travel: 20px;
 }
 
-.rc-switch--checked .rc-switch__label {
+.rcui-switch--checked .rcui-switch__label {
   justify-content: flex-start;
   padding: 0 23px 0 7px;
-  color: var(--rc-color-text-inverse);
+  color: var(--rcui-color-text-inverse);
 }
 
-.rc-switch--disabled,
-.rc-switch--disabled:hover {
-  border-color: var(--rc-color-border);
-  background: var(--rc-color-bg-disabled);
+.rcui-switch--disabled,
+.rcui-switch--disabled:hover {
+  border-color: var(--rcui-color-border);
+  background: var(--rcui-color-bg-disabled);
   cursor: not-allowed;
 }
 
-.rc-switch--disabled.rc-switch--checked,
-.rc-switch--disabled.rc-switch--checked:hover {
-  border-color: var(--rc-color-border-strong);
-  background: var(--rc-color-border-strong);
+.rcui-switch--disabled.rcui-switch--checked,
+.rcui-switch--disabled.rcui-switch--checked:hover {
+  border-color: var(--rcui-color-border-strong);
+  background: var(--rcui-color-border-strong);
 }
 
-.rc-switch--disabled .rc-switch__handle {
-  background: var(--rc-color-bg-container);
+.rcui-switch--disabled .rcui-switch__handle {
+  background: var(--rcui-color-bg-container);
   box-shadow: none;
 }
 
-.rc-switch--disabled .rc-switch__label {
-  color: var(--rc-color-text-disabled);
+.rcui-switch--disabled .rcui-switch__label {
+  color: var(--rcui-color-text-disabled);
 }
 
-.rc-switch--loading {
+.rcui-switch--loading {
   cursor: default;
 }
 
 /* ---- small ---- */
-.rc-switch--small {
+.rcui-switch--small {
   width: 32px;
   height: 18px;
 }
 
-.rc-switch--small .rc-switch__handle {
+.rcui-switch--small .rcui-switch__handle {
   top: 2px;
   left: 2px;
   width: 12px;
   height: 12px;
 }
 
-.rc-switch--small.rc-switch--checked .rc-switch__handle {
-  --rc-switch-travel: 14px;
+.rcui-switch--small.rcui-switch--checked .rcui-switch__handle {
+  --rcui-switch-travel: 14px;
 }
 
-.rc-switch--small .rc-switch__label {
+.rcui-switch--small .rcui-switch__label {
   padding: 0 4px 0 16px;
   font-size: 10px;
 }
 
-.rc-switch--small.rc-switch--checked .rc-switch__label {
+.rcui-switch--small.rcui-switch--checked .rcui-switch__label {
   padding: 0 16px 0 4px;
 }

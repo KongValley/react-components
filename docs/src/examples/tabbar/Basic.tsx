@@ -35,7 +35,7 @@ export default function TabBarBasic() {
     <MobileFrame>
       <div className="docs-mobile-body">
         <div>
-          <strong style={{ display: 'block', fontSize: 18, color: 'var(--rc-color-text)' }}>
+          <strong style={{ display: 'block', fontSize: 18, color: 'var(--rcui-color-text)' }}>
             {current?.title}
           </strong>
           <span style={{ marginTop: 6, display: 'block' }}>

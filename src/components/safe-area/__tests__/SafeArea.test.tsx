@@ -5,6 +5,6 @@ import { SafeArea } from '../SafeArea';
 describe('SafeArea', () => {
   it('applies the requested edge classes', () => {
     render(<SafeArea data-testid="safe" position="both" />);
-    expect(screen.getByTestId('safe')).toHaveClass('rc-safe-area--both');
+    expect(screen.getByTestId('safe')).toHaveClass('rcui-safe-area--both');
   });
 });

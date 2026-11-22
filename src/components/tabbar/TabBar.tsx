@@ -90,14 +90,14 @@ export const TabBar = forwardRef<HTMLDivElement, TabBarProps>(function TabBar(
         {...rest}
         ref={ref}
         className={cx(
-          'rc-tabbar',
-          fixed && 'rc-tabbar--fixed',
-          safeArea && 'rc-tabbar--safe-area',
+          'rcui-tabbar',
+          fixed && 'rcui-tabbar--fixed',
+          safeArea && 'rcui-tabbar--safe-area',
           className,
         )}
       >
         <div
-          className="rc-tabbar__inner"
+          className="rcui-tabbar__inner"
           role="tablist"
           aria-label={ariaLabel ?? 'Bottom navigation'}
         >
@@ -117,9 +117,9 @@ export const TabBar = forwardRef<HTMLDivElement, TabBarProps>(function TabBar(
                 disabled={item.disabled}
                 tabIndex={active ? 0 : -1}
                 className={cx(
-                  'rc-tabbar__item',
-                  active && 'rc-tabbar__item--active',
-                  item.disabled && 'rc-tabbar__item--disabled',
+                  'rcui-tabbar__item',
+                  active && 'rcui-tabbar__item--active',
+                  item.disabled && 'rcui-tabbar__item--disabled',
                 )}
                 onClick={() => {
                   if (item.disabled) return;
@@ -127,17 +127,17 @@ export const TabBar = forwardRef<HTMLDivElement, TabBarProps>(function TabBar(
                 }}
                 onKeyDown={(event) => handleKeyDown(event, index)}
               >
-                <span className="rc-tabbar__icon">
+                <span className="rcui-tabbar__icon">
                   {active && item.activeIcon !== undefined ? item.activeIcon : item.icon}
                   {hasBadge ? (
                     item.dot ? (
-                      <span className="rc-tabbar__badge rc-tabbar__badge--dot" />
+                      <span className="rcui-tabbar__badge rcui-tabbar__badge--dot" />
                     ) : (
-                      <span className="rc-tabbar__badge">{formatBadge(item.badge)}</span>
+                      <span className="rcui-tabbar__badge">{formatBadge(item.badge)}</span>
                     )
                   ) : null}
                 </span>
-                <span className="rc-tabbar__title">{item.title}</span>
+                <span className="rcui-tabbar__title">{item.title}</span>
               </button>
             );
           })}
@@ -146,8 +146,8 @@ export const TabBar = forwardRef<HTMLDivElement, TabBarProps>(function TabBar(
       {showPlaceholder ? (
         <div
           className={cx(
-            'rc-tabbar-placeholder',
-            safeArea && 'rc-tabbar-placeholder--safe-area',
+            'rcui-tabbar-placeholder',
+            safeArea && 'rcui-tabbar-placeholder--safe-area',
           )}
           aria-hidden="true"
         />

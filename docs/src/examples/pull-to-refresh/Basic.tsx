@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, Cell, CellGroup, PullToRefresh } from '@lib';
 import { MobileFrame } from '../../components/MobileFrame';
 
-const INITIAL_ITEMS = ['设计稿评审', '接口联调', '发布 v0.3.0'];
+const INITIAL_ITEMS = ['设计稿评审', '接口联调', '发布 v0.4.0'];
 
 export default function PullToRefreshBasic() {
   const [items, setItems] = useState(INITIAL_ITEMS);

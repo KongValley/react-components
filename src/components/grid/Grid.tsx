@@ -74,7 +74,7 @@ export const Row = forwardRef<HTMLDivElement, RowProps>(function Row(
     <GuttersContext.Provider value={[horizontal, vertical]}>
       <div
         ref={ref}
-        className={cx('rc-row', !wrap && 'rc-row--nowrap', className)}
+        className={cx('rcui-row', !wrap && 'rcui-row--nowrap', className)}
         style={{
           marginLeft: horizontal / -2,
           marginRight: horizontal / -2,
@@ -101,7 +101,7 @@ export const Col = forwardRef<HTMLDivElement, ColProps>(function Col(
   return (
     <div
       ref={ref}
-      className={cx('rc-col', className)}
+      className={cx('rcui-col', className)}
       style={{
         flex: width ? `0 0 ${width}` : undefined,
         maxWidth: width,

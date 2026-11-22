@@ -57,9 +57,9 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
     <span
       ref={ref}
       className={cx(
-        'rc-avatar',
-        `rc-avatar--${shape}`,
-        !showImage && 'rc-avatar--fallback',
+        'rcui-avatar',
+        `rcui-avatar--${shape}`,
+        !showImage && 'rcui-avatar--fallback',
         className,
       )}
       style={{
@@ -74,7 +74,7 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
     >
       {showImage ? (
         <img
-          className="rc-avatar__image"
+          className="rcui-avatar__image"
           src={src}
           srcSet={srcSet}
           alt={alt ?? ''}
@@ -84,7 +84,7 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
           }}
         />
       ) : (
-        <span className="rc-avatar__content">{fallback}</span>
+        <span className="rcui-avatar__content">{fallback}</span>
       )}
     </span>
   );

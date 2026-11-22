@@ -96,20 +96,20 @@ const RadioRoot = forwardRef<HTMLInputElement, RadioProps>(function Radio(
   return (
     <label
       className={cx(
-        'rc-radio',
-        isChecked && 'rc-radio--checked',
-        isDisabled && 'rc-radio--disabled',
-        isButton && 'rc-radio--button',
-        isButton && group?.buttonStyle === 'solid' && 'rc-radio--solid',
+        'rcui-radio',
+        isChecked && 'rcui-radio--checked',
+        isDisabled && 'rcui-radio--disabled',
+        isButton && 'rcui-radio--button',
+        isButton && group?.buttonStyle === 'solid' && 'rcui-radio--solid',
         className,
       )}
       style={style}
     >
-      <span className="rc-radio__control">
+      <span className="rcui-radio__control">
         <input
           ref={ref}
           type="radio"
-          className="rc-radio__input"
+          className="rcui-radio__input"
           checked={isChecked}
           disabled={isDisabled}
           name={group?.name ?? name}
@@ -117,9 +117,9 @@ const RadioRoot = forwardRef<HTMLInputElement, RadioProps>(function Radio(
           onChange={handleChange}
           {...rest}
         />
-        <span className="rc-radio__mark" aria-hidden="true" />
+        <span className="rcui-radio__mark" aria-hidden="true" />
       </span>
-      {children !== undefined ? <span className="rc-radio__label">{children}</span> : null}
+      {children !== undefined ? <span className="rcui-radio__label">{children}</span> : null}
     </label>
   );
 });
@@ -168,9 +168,9 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(function RadioGro
       <div
         ref={ref}
         className={cx(
-          'rc-radio-group',
-          button && 'rc-radio-group--button',
-          button && `rc-radio-group--${size}`,
+          'rcui-radio-group',
+          button && 'rcui-radio-group--button',
+          button && `rcui-radio-group--${size}`,
           className,
         )}
         {...rest}

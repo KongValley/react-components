@@ -10,7 +10,7 @@ describe('Button', () => {
 
     await userEvent.click(screen.getByRole('button', { name: 'Save' }));
     expect(onClick).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('button')).toHaveClass('rc-btn--default');
+    expect(screen.getByRole('button')).toHaveClass('rcui-btn--default');
   });
 
   it('supports primary variant and native submit type', () => {
@@ -20,7 +20,7 @@ describe('Button', () => {
       </Button>,
     );
     const button = screen.getByRole('button', { name: 'Submit' });
-    expect(button).toHaveClass('rc-btn--primary');
+    expect(button).toHaveClass('rcui-btn--primary');
     expect(button).toHaveAttribute('type', 'submit');
   });
 

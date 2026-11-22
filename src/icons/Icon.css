@@ -1,15 +1,15 @@
-.rc-icon {
+.rcui-icon {
   display: inline-block;
   flex: none;
   vertical-align: -0.125em;
   color: inherit;
 }
 
-.rc-icon--spin {
-  animation: rc-icon-spin 0.9s linear infinite;
+.rcui-icon--spin {
+  animation: rcui-icon-spin 0.9s linear infinite;
 }
 
-@keyframes rc-icon-spin {
+@keyframes rcui-icon-spin {
   to {
     transform: rotate(360deg);
   }

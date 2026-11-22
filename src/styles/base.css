@@ -1,34 +1,34 @@
 /**
  * Minimal, non-intrusive baseline. The library never resets global page styles;
- * only elements carrying a `rc-` class are normalized.
+ * only elements carrying a `rcui-` class are normalized.
  */
-[class^='rc-'],
-[class*=' rc-'] {
+[class^='rcui-'],
+[class*=' rcui-'] {
   box-sizing: border-box;
 }
 
-[class^='rc-'] *,
-[class*=' rc-'] *,
-[class^='rc-'] *::before,
-[class*=' rc-'] *::before,
-[class^='rc-'] *::after,
-[class*=' rc-'] *::after {
+[class^='rcui-'] *,
+[class*=' rcui-'] *,
+[class^='rcui-'] *::before,
+[class*=' rcui-'] *::before,
+[class^='rcui-'] *::after,
+[class*=' rcui-'] *::after {
   box-sizing: inherit;
 }
 
-button.rc-btn,
-.rc-input,
-.rc-select,
-.rc-pagination,
-.rc-form,
-.rc-tabs,
-.rc-dropdown-menu,
-.rc-tooltip,
-.rc-popover {
-  font-family: var(--rc-font-family);
+button.rcui-btn,
+.rcui-input,
+.rcui-select,
+.rcui-pagination,
+.rcui-form,
+.rcui-tabs,
+.rcui-dropdown-menu,
+.rcui-tooltip,
+.rcui-popover {
+  font-family: var(--rcui-font-family);
 }
 
-.rc-visually-hidden {
+.rcui-visually-hidden {
   position: absolute !important;
   width: 1px;
   height: 1px;
@@ -41,21 +41,21 @@ button.rc-btn,
 }
 
 /* Shared focus ring for keyboard users. */
-.rc-focus-ring:focus-visible {
-  outline: 2px solid var(--rc-color-primary);
+.rcui-focus-ring:focus-visible {
+  outline: 2px solid var(--rcui-color-primary);
   outline-offset: 2px;
 }
 
 /* Respect the user's reduced-motion preference. */
 @media (prefers-reduced-motion: reduce) {
-  [class^='rc-'],
-  [class^='rc-'] *,
-  [class^='rc-'] *::before,
-  [class^='rc-'] *::after,
-  [class*=' rc-'],
-  [class*=' rc-'] *,
-  [class*=' rc-'] *::before,
-  [class*=' rc-'] *::after {
+  [class^='rcui-'],
+  [class^='rcui-'] *,
+  [class^='rcui-'] *::before,
+  [class^='rcui-'] *::after,
+  [class*=' rcui-'],
+  [class*=' rcui-'] *,
+  [class*=' rcui-'] *::before,
+  [class*=' rcui-'] *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -63,7 +63,7 @@ button.rc-btn,
 }
 
 /* Shared motion primitives */
-@keyframes rc-fade-in {
+@keyframes rcui-fade-in {
   from {
     opacity: 0;
   }
@@ -72,7 +72,7 @@ button.rc-btn,
   }
 }
 
-@keyframes rc-pop-in {
+@keyframes rcui-pop-in {
   from {
     opacity: 0;
     transform: scale(0.88);
@@ -83,7 +83,7 @@ button.rc-btn,
   }
 }
 
-@keyframes rc-slide-up-in {
+@keyframes rcui-slide-up-in {
   from {
     opacity: 0;
     transform: translateY(6px);
@@ -94,7 +94,7 @@ button.rc-btn,
   }
 }
 
-@keyframes rc-alert-in {
+@keyframes rcui-alert-in {
   from {
     opacity: 0;
     transform: translateY(-4px);
@@ -106,44 +106,44 @@ button.rc-btn,
 }
 
 /* Floating panel primitive (position is supplied inline). */
-.rc-popup {
+.rcui-popup {
   position: fixed;
-  z-index: var(--rc-z-index-dropdown);
+  z-index: var(--rcui-z-index-dropdown);
   opacity: 0;
-  transform: translate3d(var(--rc-popup-offset-x, 0), var(--rc-popup-offset-y, 0), 0) scale(0.97);
-  transform-origin: var(--rc-popup-origin, 50% 0%);
+  transform: translate3d(var(--rcui-popup-offset-x, 0), var(--rcui-popup-offset-y, 0), 0) scale(0.97);
+  transform-origin: var(--rcui-popup-origin, 50% 0%);
   transition:
-    opacity 0.14s var(--rc-ease-out),
-    transform 0.18s var(--rc-ease-out);
+    opacity 0.14s var(--rcui-ease-out),
+    transform 0.18s var(--rcui-ease-out);
   will-change: opacity, transform;
   backface-visibility: hidden;
 }
 
-.rc-popup[data-state='open'] {
+.rcui-popup[data-state='open'] {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
 }
 
-.rc-popup[data-state='closed'] {
+.rcui-popup[data-state='closed'] {
   pointer-events: none;
 }
 
-.rc-popup[data-placement^='top'] {
-  --rc-popup-offset-y: 5px;
-  --rc-popup-origin: 50% 100%;
+.rcui-popup[data-placement^='top'] {
+  --rcui-popup-offset-y: 5px;
+  --rcui-popup-origin: 50% 100%;
 }
 
-.rc-popup[data-placement^='bottom'] {
-  --rc-popup-offset-y: -5px;
-  --rc-popup-origin: 50% 0%;
+.rcui-popup[data-placement^='bottom'] {
+  --rcui-popup-offset-y: -5px;
+  --rcui-popup-origin: 50% 0%;
 }
 
-.rc-popup[data-placement^='left'] {
-  --rc-popup-offset-x: 5px;
-  --rc-popup-origin: 100% 50%;
+.rcui-popup[data-placement^='left'] {
+  --rcui-popup-offset-x: 5px;
+  --rcui-popup-origin: 100% 50%;
 }
 
-.rc-popup[data-placement^='right'] {
-  --rc-popup-offset-x: -5px;
-  --rc-popup-origin: 0% 50%;
+.rcui-popup[data-placement^='right'] {
+  --rcui-popup-offset-x: -5px;
+  --rcui-popup-origin: 0% 50%;
 }

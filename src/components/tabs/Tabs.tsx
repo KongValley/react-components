@@ -132,17 +132,17 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
     <div
       ref={ref}
       className={cx(
-        'rc-tabs',
-        `rc-tabs--${type}`,
-        centered && 'rc-tabs--centered',
+        'rcui-tabs',
+        `rcui-tabs--${type}`,
+        centered && 'rcui-tabs--centered',
         className,
       )}
       {...rest}
     >
-      <div className="rc-tabs__nav">
+      <div className="rcui-tabs__nav">
         <div
           ref={listRef}
-          className="rc-tabs__list"
+          className="rcui-tabs__list"
           role="tablist"
           aria-orientation="horizontal"
           onKeyDown={handleKeyDown}
@@ -164,8 +164,8 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
                 tabIndex={selected ? 0 : -1}
                 disabled={item.disabled}
                 className={cx(
-                  'rc-tabs__tab',
-                  selected && 'rc-tabs__tab--active',
+                  'rcui-tabs__tab',
+                  selected && 'rcui-tabs__tab--active',
                 )}
                 onClick={() => {
                   if (item.disabled) return;
@@ -173,7 +173,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
                 }}
               >
                 {item.icon !== undefined ? (
-                  <span className="rc-tabs__tab-icon">{item.icon}</span>
+                  <span className="rcui-tabs__tab-icon">{item.icon}</span>
                 ) : null}
                 {item.label}
               </button>
@@ -181,7 +181,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
           })}
           {type === 'line' ? (
             <span
-              className="rc-tabs__ink"
+              className="rcui-tabs__ink"
               aria-hidden="true"
               style={{
                 width: ink.width,
@@ -191,11 +191,11 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
             />
           ) : null}
         </div>
-        {extra !== undefined ? <div className="rc-tabs__extra">{extra}</div> : null}
+        {extra !== undefined ? <div className="rcui-tabs__extra">{extra}</div> : null}
       </div>
       <div
         key={validValue}
-        className="rc-tabs__content"
+        className="rcui-tabs__content"
         role="tabpanel"
         id={`${baseId}-panel-${validValue}`}
         aria-labelledby={`${baseId}-tab-${validValue}`}

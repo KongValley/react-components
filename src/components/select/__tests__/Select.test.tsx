@@ -21,7 +21,7 @@ describe('Select', () => {
     expect(onChange).toHaveBeenCalledWith('banana');
     await waitFor(() => expect(screen.queryByRole('listbox')).not.toBeInTheDocument());
     await waitFor(() =>
-      expect(document.querySelector('.rc-select-dropdown')).not.toBeInTheDocument(),
+      expect(document.querySelector('.rcui-select-dropdown')).not.toBeInTheDocument(),
     );
     expect(screen.getByRole('combobox')).toHaveTextContent('Banana');
   });

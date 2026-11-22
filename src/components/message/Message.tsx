@@ -119,20 +119,20 @@ function MessageItemView({ item }: { item: MessageItem }) {
   return (
     <div
       className={cx(
-        'rc-message',
-        `rc-message--${item.type}`,
-        item.leaving && 'rc-message--leaving',
+        'rcui-message',
+        `rcui-message--${item.type}`,
+        item.leaving && 'rcui-message--leaving',
       )}
       role="status"
     >
-      <span className="rc-message__icon">
+      <span className="rcui-message__icon">
         {item.icon ?? <Icon name={ICONS[item.type]} spin={item.type === 'loading'} size={16} />}
       </span>
-      <span className="rc-message__content">{item.content}</span>
+      <span className="rcui-message__content">{item.content}</span>
       {item.closable ? (
         <button
           type="button"
-          className="rc-message__close"
+          className="rcui-message__close"
           aria-label="Dismiss notification"
           onClick={() => removeItem(item.id, true)}
         >
@@ -147,7 +147,7 @@ function MessageHost() {
   const list = useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
   return (
     <div
-      className="rc-message-container"
+      className="rcui-message-container"
       role="region"
       aria-label="Notifications"
       aria-live="polite"
@@ -164,7 +164,7 @@ function ensureHost() {
   window.clearTimeout(teardownTimer);
   if (!host) {
     host = document.createElement('div');
-    host.className = 'rc-message-host';
+    host.className = 'rcui-message-host';
     document.body.appendChild(host);
     root = createRoot(host);
     root.render(<MessageHost />);

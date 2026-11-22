@@ -88,10 +88,10 @@ function useCopy(onCopy?: (text: string) => void) {
 }
 
 const TYPE_CLASS: Record<TypographyType, string> = {
-  secondary: 'rc-typography--secondary',
-  success: 'rc-typography--success',
-  warning: 'rc-typography--warning',
-  danger: 'rc-typography--danger',
+  secondary: 'rcui-typography--secondary',
+  success: 'rcui-typography--success',
+  warning: 'rcui-typography--warning',
+  danger: 'rcui-typography--danger',
 };
 
 function TypographyContent({ children, copyable, ellipsis }: ContentProps) {
@@ -105,9 +105,9 @@ function TypographyContent({ children, copyable, ellipsis }: ContentProps) {
   const content = (
     <span
       className={cx(
-        'rc-typography__content',
-        ellipsis && 'rc-typography__content--ellipsis',
-        multiline && 'rc-typography__content--multiline',
+        'rcui-typography__content',
+        ellipsis && 'rcui-typography__content--ellipsis',
+        multiline && 'rcui-typography__content--multiline',
       )}
       style={multiline ? { WebkitLineClamp: rows } : undefined}
     >
@@ -125,7 +125,7 @@ function TypographyContent({ children, copyable, ellipsis }: ContentProps) {
       {content}
       <button
         type="button"
-        className={cx('rc-typography__copy', copied && 'is-copied')}
+        className={cx('rcui-typography__copy', copied && 'is-copied')}
         title={copied ? tooltips[1] : tooltips[0]}
         aria-label={copied ? tooltips[1] : tooltips[0]}
         onClick={() => copy(text)}
@@ -142,17 +142,17 @@ function splitProps<T extends TypographyBaseProps>(
   return {
     rest,
     rootClass: cx(
-      'rc-typography',
+      'rcui-typography',
       type && TYPE_CLASS[type],
-      strong && 'rc-typography--strong',
-      italic && 'rc-typography--italic',
-      underline && 'rc-typography--underline',
-      deleted && 'rc-typography--delete',
-      code && 'rc-typography--code',
-      mark && 'rc-typography--mark',
-      disabled && 'rc-typography--disabled',
-      ellipsis && 'rc-typography--ellipsis',
-      copyable && 'rc-typography--with-copy',
+      strong && 'rcui-typography--strong',
+      italic && 'rcui-typography--italic',
+      underline && 'rcui-typography--underline',
+      deleted && 'rcui-typography--delete',
+      code && 'rcui-typography--code',
+      mark && 'rcui-typography--mark',
+      disabled && 'rcui-typography--disabled',
+      ellipsis && 'rcui-typography--ellipsis',
+      copyable && 'rcui-typography--with-copy',
     ),
     contentProps: { copyable, ellipsis } as Pick<ContentProps, 'copyable' | 'ellipsis'>,
   };
@@ -175,7 +175,7 @@ export const Title = forwardRef<HTMLHeadingElement, TitleProps>(function Title(
   return (
     <Heading
       ref={ref}
-      className={cx(rootClass, 'rc-title', `rc-title--${level}`, className)}
+      className={cx(rootClass, 'rcui-title', `rcui-title--${level}`, className)}
       {...rest}
     >
       <TypographyContent {...contentProps}>{children}</TypographyContent>
@@ -193,7 +193,7 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>(function Text(
 ) {
   const { rest, rootClass, contentProps } = splitProps(props);
   return (
-    <span ref={ref} className={cx(rootClass, 'rc-text', className)} {...rest}>
+    <span ref={ref} className={cx(rootClass, 'rcui-text', className)} {...rest}>
       <TypographyContent {...contentProps}>{children}</TypographyContent>
     </span>
   );
@@ -209,7 +209,7 @@ export const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(functi
 ) {
   const { rest, rootClass, contentProps } = splitProps(props);
   return (
-    <p ref={ref} className={cx(rootClass, 'rc-paragraph', className)} {...rest}>
+    <p ref={ref} className={cx(rootClass, 'rcui-paragraph', className)} {...rest}>
       <TypographyContent {...contentProps}>{children}</TypographyContent>
     </p>
   );
@@ -229,7 +229,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   return (
     <a
       ref={ref}
-      className={cx(rootClass, 'rc-link', disabled && 'rc-link--disabled', className)}
+      className={cx(rootClass, 'rcui-link', disabled && 'rcui-link--disabled', className)}
       href={disabled ? undefined : href}
       aria-disabled={disabled || undefined}
       tabIndex={disabled ? -1 : undefined}

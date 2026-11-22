@@ -276,7 +276,7 @@ export const Swiper = forwardRef<HTMLDivElement, SwiperProps>(function Swiper(
     <div
       {...rest}
       ref={ref}
-      className={cx('rc-swiper', className)}
+      className={cx('rcui-swiper', className)}
       style={{ height, ...style }}
       role="region"
       aria-roledescription="carousel"
@@ -284,7 +284,7 @@ export const Swiper = forwardRef<HTMLDivElement, SwiperProps>(function Swiper(
     >
       <div
         ref={viewportRef}
-        className="rc-swiper__viewport"
+        className="rcui-swiper__viewport"
         tabIndex={0}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -295,12 +295,12 @@ export const Swiper = forwardRef<HTMLDivElement, SwiperProps>(function Swiper(
       >
         <div
           ref={trackRef}
-          className="rc-swiper__track"
+          className="rcui-swiper__track"
           style={{
             transform: `translate3d(calc(${-position * 100}% + ${dragOffset}px), 0, 0)`,
             transition:
               transitionDuration > 0
-                ? `transform ${transitionDuration}ms var(--rc-ease-out)`
+                ? `transform ${transitionDuration}ms var(--rcui-ease-out)`
                 : 'none',
           }}
           onTransitionEnd={handleTransitionEnd}
@@ -313,7 +313,7 @@ export const Swiper = forwardRef<HTMLDivElement, SwiperProps>(function Swiper(
             return (
               <div
                 key={`slide-${trackIndex}`}
-                className={cx('rc-swiper__slide', clone && 'rc-swiper__slide--clone')}
+                className={cx('rcui-swiper__slide', clone && 'rcui-swiper__slide--clone')}
                 role="group"
                 aria-roledescription="slide"
                 aria-label={`${realIndex + 1} of ${count}`}
@@ -326,14 +326,14 @@ export const Swiper = forwardRef<HTMLDivElement, SwiperProps>(function Swiper(
         </div>
       </div>
       {showIndicators && count > 1 ? (
-        <div className="rc-swiper__indicators">
+        <div className="rcui-swiper__indicators">
           {slides.map((_, dotIndex) => (
             <button
               key={`dot-${dotIndex}`}
               type="button"
               className={cx(
-                'rc-swiper__indicator',
-                dotIndex === safeValue && 'rc-swiper__indicator--active',
+                'rcui-swiper__indicator',
+                dotIndex === safeValue && 'rcui-swiper__indicator--active',
               )}
               aria-label={`Go to slide ${dotIndex + 1}`}
               aria-current={dotIndex === safeValue ? 'true' : undefined}

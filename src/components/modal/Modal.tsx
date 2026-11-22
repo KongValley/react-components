@@ -94,12 +94,12 @@ function DesktopModal({
   return (
     <Portal container={getContainer?.()}>
       <div
-        className={cx('rc-modal-root', centered && 'rc-modal-root--centered')}
+        className={cx('rcui-modal-root', centered && 'rcui-modal-root--centered')}
         style={zIndex !== undefined ? { zIndex } : undefined}
       >
-        <div className={cx('rc-modal-mask', active && 'rc-modal-mask--active')} aria-hidden="true" />
+        <div className={cx('rcui-modal-mask', active && 'rcui-modal-mask--active')} aria-hidden="true" />
         <div
-          className="rc-modal-wrap"
+          className="rcui-modal-wrap"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget && maskClosable) onCancel?.();
           }}
@@ -111,7 +111,7 @@ function DesktopModal({
               if (typeof forwardedRef === 'function') forwardedRef(node);
               else if (forwardedRef) forwardedRef.current = node;
             }}
-            className={cx('rc-modal', active && 'rc-modal--active', className)}
+            className={cx('rcui-modal', active && 'rcui-modal--active', className)}
             role="dialog"
             aria-modal="true"
             aria-labelledby={title !== undefined ? titleId : undefined}
@@ -119,14 +119,14 @@ function DesktopModal({
             style={{ width }}
           >
             {title !== undefined || closable ? (
-              <div className="rc-modal__header">
-                <div className="rc-modal__title" id={title !== undefined ? titleId : undefined}>
+              <div className="rcui-modal__header">
+                <div className="rcui-modal__title" id={title !== undefined ? titleId : undefined}>
                   {title}
                 </div>
                 {closable ? (
                   <button
                     type="button"
-                    className="rc-modal__close"
+                    className="rcui-modal__close"
                     aria-label="Close dialog"
                     onClick={onCancel}
                   >
@@ -135,7 +135,7 @@ function DesktopModal({
                 ) : null}
               </div>
             ) : null}
-            <div className="rc-modal__body">{children}</div>
+            <div className="rcui-modal__body">{children}</div>
             {footerNode}
           </div>
         </div>
@@ -176,10 +176,10 @@ function ModalSheet({
       afterClose={afterClose}
       getContainer={getContainer}
       zIndex={zIndex}
-      className={cx('rc-modal-sheet', className)}
+      className={cx('rcui-modal-sheet', className)}
       bodyStyle={{ padding: 0 }}
     >
-      <div className="rc-modal__body">{children}</div>
+      <div className="rcui-modal__body">{children}</div>
       {footerNode}
     </Popup>
   );

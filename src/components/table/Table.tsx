@@ -225,7 +225,7 @@ function TableInner<T extends Record<string, any>>(
         pageSize={pageSize}
         total={total}
         onChange={handlePageChange}
-        className="rc-table__pagination"
+        className="rcui-table__pagination"
       />
     );
 
@@ -233,20 +233,20 @@ function TableInner<T extends Record<string, any>>(
     <div
       ref={ref}
       className={cx(
-        'rc-table-wrapper',
-        size === 'middle' && 'rc-table-wrapper--middle',
-        size === 'small' && 'rc-table-wrapper--small',
-        bordered && 'rc-table-wrapper--bordered',
+        'rcui-table-wrapper',
+        size === 'middle' && 'rcui-table-wrapper--middle',
+        size === 'small' && 'rcui-table-wrapper--small',
+        bordered && 'rcui-table-wrapper--bordered',
         className,
       )}
       {...rest}
     >
-      <div className="rc-table-scroll">
+      <div className="rcui-table-scroll">
         <Spin spinning={loading}>
           <table
             className={cx(
-              'rc-table',
-              columns.some((column) => column.ellipsis) && 'rc-table--fixed',
+              'rcui-table',
+              columns.some((column) => column.ellipsis) && 'rcui-table--fixed',
             )}
         >
           {columns.some((column) => column.ellipsis || column.width !== undefined) ? (
@@ -261,7 +261,7 @@ function TableInner<T extends Record<string, any>>(
             <thead>
               <tr>
                 {rowSelection ? (
-                  <th className="rc-table__selection" scope="col">
+                  <th className="rcui-table__selection" scope="col">
                     <Checkbox
                       aria-label="Select all rows"
                       checked={allSelected}
@@ -278,9 +278,9 @@ function TableInner<T extends Record<string, any>>(
                       key={key}
                       scope="col"
                       className={cx(
-                        'rc-table__cell',
-                        column.align && `rc-table__cell--${column.align}`,
-                        column.ellipsis && 'rc-table__cell--ellipsis',
+                        'rcui-table__cell',
+                        column.align && `rcui-table__cell--${column.align}`,
+                        column.ellipsis && 'rcui-table__cell--ellipsis',
                         column.className,
                       )}
                       aria-sort={
@@ -296,16 +296,16 @@ function TableInner<T extends Record<string, any>>(
                       {column.sorter ? (
                         <button
                           type="button"
-                          className="rc-table__sorter"
+                          className="rcui-table__sorter"
                           onClick={() => toggleSort(key, Boolean(column.sorter))}
                         >
                           <span>{column.title}</span>
-                          <span className="rc-table__sorter-icons" aria-hidden="true">
+                          <span className="rcui-table__sorter-icons" aria-hidden="true">
                             <Icon
                               name="chevron-up"
                               size={10}
                               className={cx(
-                                'rc-table__sorter-icon',
+                                'rcui-table__sorter-icon',
                                 active && sortState?.order === 'ascend' && 'is-active',
                               )}
                             />
@@ -313,7 +313,7 @@ function TableInner<T extends Record<string, any>>(
                               name="chevron-down"
                               size={10}
                               className={cx(
-                                'rc-table__sorter-icon',
+                                'rcui-table__sorter-icon',
                                 active && sortState?.order === 'descend' && 'is-active',
                               )}
                             />
@@ -330,8 +330,8 @@ function TableInner<T extends Record<string, any>>(
           ) : null}
           <tbody>
             {pageEntries.length === 0 ? (
-              <tr className="rc-table__empty-row">
-                <td colSpan={columnCount} className="rc-table__cell">
+              <tr className="rcui-table__empty-row">
+                <td colSpan={columnCount} className="rcui-table__cell">
                   <Empty description={emptyText ?? 'No data'} />
                 </td>
               </tr>
@@ -344,10 +344,10 @@ function TableInner<T extends Record<string, any>>(
                     key={key}
                     data-row-key={key}
                     {...rowProps}
-                    className={cx('rc-table__row', rowProps.className)}
+                    className={cx('rcui-table__row', rowProps.className)}
                   >
                     {rowSelection ? (
-                      <td className="rc-table__selection">
+                      <td className="rcui-table__selection">
                         <Checkbox
                           aria-label={`Select row ${key}`}
                           checked={selectedKeys.includes(key)}
@@ -365,9 +365,9 @@ function TableInner<T extends Record<string, any>>(
                         <td
                           key={columnKey}
                           className={cx(
-                            'rc-table__cell',
-                            column.align && `rc-table__cell--${column.align}`,
-                            column.ellipsis && 'rc-table__cell--ellipsis',
+                            'rcui-table__cell',
+                            column.align && `rcui-table__cell--${column.align}`,
+                            column.ellipsis && 'rcui-table__cell--ellipsis',
                             column.className,
                           )}
                         >

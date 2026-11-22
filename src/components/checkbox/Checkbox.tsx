@@ -103,19 +103,19 @@ const CheckboxRoot = forwardRef<HTMLInputElement, CheckboxProps>(function Checkb
   return (
     <label
       className={cx(
-        'rc-checkbox',
-        isChecked && 'rc-checkbox--checked',
-        indeterminate && 'rc-checkbox--indeterminate',
-        isDisabled && 'rc-checkbox--disabled',
+        'rcui-checkbox',
+        isChecked && 'rcui-checkbox--checked',
+        indeterminate && 'rcui-checkbox--indeterminate',
+        isDisabled && 'rcui-checkbox--disabled',
         className,
       )}
       style={style}
     >
-      <span className="rc-checkbox__box">
+      <span className="rcui-checkbox__box">
         <input
           ref={mergedRef}
           type="checkbox"
-          className="rc-checkbox__input"
+          className="rcui-checkbox__input"
           checked={isChecked}
           disabled={isDisabled}
           name={name ?? group?.name}
@@ -123,11 +123,11 @@ const CheckboxRoot = forwardRef<HTMLInputElement, CheckboxProps>(function Checkb
           onChange={handleChange}
           {...rest}
         />
-        <span className="rc-checkbox__mark" aria-hidden="true">
+        <span className="rcui-checkbox__mark" aria-hidden="true">
           {indeterminate ? <Icon name="minus" size={12} /> : <Icon name="check" size={12} />}
         </span>
       </span>
-      {children !== undefined ? <span className="rc-checkbox__label">{children}</span> : null}
+      {children !== undefined ? <span className="rcui-checkbox__label">{children}</span> : null}
     </label>
   );
 });
@@ -172,8 +172,8 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(function Ch
       <div
         ref={ref}
         className={cx(
-          'rc-checkbox-group',
-          direction === 'vertical' && 'rc-checkbox-group--vertical',
+          'rcui-checkbox-group',
+          direction === 'vertical' && 'rcui-checkbox-group--vertical',
           className,
         )}
         {...rest}

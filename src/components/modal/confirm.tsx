@@ -41,7 +41,7 @@ export function confirm(options: ConfirmOptions = {}): ConfirmInstance {
 
   const type = options.type ?? 'info';
   const container = document.createElement('div');
-  container.className = 'rc-modal-confirm-host';
+  container.className = 'rcui-modal-confirm-host';
   document.body.appendChild(container);
   const root = createRoot(container);
   let cleaned = false;
@@ -79,11 +79,11 @@ export function confirm(options: ConfirmOptions = {}): ConfirmInstance {
         closable={false}
         maskClosable={false}
       >
-        <div className="rc-modal-confirm">
-          <span className={cx('rc-modal-confirm__icon', `rc-modal-confirm__icon--${type}`)}>
+        <div className="rcui-modal-confirm">
+          <span className={cx('rcui-modal-confirm__icon', `rcui-modal-confirm__icon--${type}`)}>
             {options.icon ?? <Icon name={ICONS[type]} size={22} />}
           </span>
-          <div className="rc-modal-confirm__content">{options.content}</div>
+          <div className="rcui-modal-confirm__content">{options.content}</div>
         </div>
       </Modal>
     );

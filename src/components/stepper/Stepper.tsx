@@ -159,12 +159,12 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(function Stepper
     <div
       {...rest}
       ref={ref}
-      className={cx('rc-stepper', disabled && 'rc-stepper--disabled', className)}
+      className={cx('rcui-stepper', disabled && 'rcui-stepper--disabled', className)}
       role="group"
     >
       <button
         type="button"
-        className="rc-stepper__button"
+        className="rcui-stepper__button"
         aria-label="Decrease value"
         disabled={decreaseDisabled}
         onPointerDown={startPress(-stepValue)}
@@ -180,7 +180,7 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(function Stepper
         <Icon name="minus" size={16} />
       </button>
       <input
-        className="rc-stepper__input"
+        className="rcui-stepper__input"
         style={inputStyle}
         type="text"
         inputMode="decimal"
@@ -199,7 +199,7 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(function Stepper
       />
       <button
         type="button"
-        className="rc-stepper__button"
+        className="rcui-stepper__button"
         aria-label="Increase value"
         disabled={increaseDisabled}
         onPointerDown={startPress(stepValue)}

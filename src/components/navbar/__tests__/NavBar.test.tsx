@@ -17,7 +17,7 @@ describe('NavBar', () => {
 
   it('reserves space when fixed', () => {
     const { container } = render(<NavBar title="Fixed" fixed />);
-    expect(container.querySelector('.rc-navbar--fixed')).not.toBeNull();
-    expect(container.querySelector('.rc-navbar-placeholder')).not.toBeNull();
+    expect(container.querySelector('.rcui-navbar--fixed')).not.toBeNull();
+    expect(container.querySelector('.rcui-navbar-placeholder')).not.toBeNull();
   });
 });

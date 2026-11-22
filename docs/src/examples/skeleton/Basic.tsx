@@ -18,8 +18,8 @@ export default function SkeletonBasic() {
               width: 40,
               height: 40,
               borderRadius: '50%',
-              background: 'var(--rc-color-primary-bg)',
-              color: 'var(--rc-color-primary)',
+              background: 'var(--rcui-color-primary-bg)',
+              color: 'var(--rcui-color-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -30,7 +30,7 @@ export default function SkeletonBasic() {
           </div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: 15 }}>内容加载完成</h3>
-            <p style={{ margin: 0, color: 'var(--rc-color-text-secondary)', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, color: 'var(--rcui-color-text-secondary)', lineHeight: 1.7 }}>
               骨架屏在数据加载期间保持页面结构稳定，减少布局跳动。
             </p>
           </div>

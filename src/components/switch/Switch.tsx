@@ -47,11 +47,11 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(function Switch
       aria-checked={isChecked}
       aria-busy={loading || undefined}
       className={cx(
-        'rc-switch',
-        isChecked && 'rc-switch--checked',
-        size === 'small' && 'rc-switch--small',
-        loading && 'rc-switch--loading',
-        disabled && 'rc-switch--disabled',
+        'rcui-switch',
+        isChecked && 'rcui-switch--checked',
+        size === 'small' && 'rcui-switch--small',
+        loading && 'rcui-switch--loading',
+        disabled && 'rcui-switch--disabled',
         className,
       )}
       disabled={disabled || loading}
@@ -62,11 +62,11 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(function Switch
       }}
       {...rest}
     >
-      <span className="rc-switch__handle">
+      <span className="rcui-switch__handle">
         {loading ? <Icon name="loading" spin size={size === 'small' ? 8 : 10} /> : null}
       </span>
       {hasLabel ? (
-        <span className="rc-switch__label" aria-hidden="true">
+        <span className="rcui-switch__label" aria-hidden="true">
           {isChecked ? checkedChildren : unCheckedChildren}
         </span>
       ) : null}

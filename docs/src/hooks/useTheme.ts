@@ -19,7 +19,7 @@ export function useTheme() {
       delete document.documentElement.dataset.theme;
     }
     try {
-      localStorage.setItem('rc-docs-theme', theme);
+      localStorage.setItem('rcui-docs-theme', theme);
     } catch {
       // storage may be unavailable
     }

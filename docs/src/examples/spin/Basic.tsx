@@ -13,7 +13,7 @@ export default function SpinBasic() {
 
       <Spin spinning={spinning} tip="正在加载数据...">
         <Card title="本周数据">
-          <p style={{ margin: 0, color: 'var(--rc-color-text-secondary)', lineHeight: 1.8 }}>
+          <p style={{ margin: 0, color: 'var(--rcui-color-text-secondary)', lineHeight: 1.8 }}>
             组件库本周新增 12 个组件、4 个交互示例，并完善了键盘操作与焦点管理。
           </p>
         </Card>

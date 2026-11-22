@@ -46,6 +46,6 @@ describe('Tabs', () => {
 
   it('renders card type', () => {
     const { container } = render(<Tabs items={items} type="card" />);
-    expect(container.querySelector('.rc-tabs--card')).toBeTruthy();
+    expect(container.querySelector('.rcui-tabs--card')).toBeTruthy();
   });
 });

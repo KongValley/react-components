@@ -52,23 +52,23 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       ref={ref}
       type={htmlType}
       className={cx(
-        'rc-btn',
-        `rc-btn--${variant}`,
-        size !== 'middle' && `rc-btn--${size}`,
-        danger && 'rc-btn--danger',
-        shape !== 'default' && `rc-btn--${shape}`,
-        block && 'rc-btn--block',
-        loading && 'rc-btn--loading',
-        iconOnly && 'rc-btn--icon-only',
+        'rcui-btn',
+        `rcui-btn--${variant}`,
+        size !== 'middle' && `rcui-btn--${size}`,
+        danger && 'rcui-btn--danger',
+        shape !== 'default' && `rcui-btn--${shape}`,
+        block && 'rcui-btn--block',
+        loading && 'rcui-btn--loading',
+        iconOnly && 'rcui-btn--icon-only',
         className,
       )}
       disabled={disabled || loading}
       aria-busy={loading || undefined}
       {...rest}
     >
-      {startIcon ? <span className="rc-btn__icon">{startIcon}</span> : null}
-      {iconOnly ? null : <span className="rc-btn__content">{children}</span>}
-      {endIcon ? <span className="rc-btn__icon">{endIcon}</span> : null}
+      {startIcon ? <span className="rcui-btn__icon">{startIcon}</span> : null}
+      {iconOnly ? null : <span className="rcui-btn__content">{children}</span>}
+      {endIcon ? <span className="rcui-btn__icon">{endIcon}</span> : null}
     </button>
   );
 });

@@ -18,7 +18,7 @@ export default function LayoutBasic() {
       style={{
         height: 420,
         overflow: 'hidden',
-        border: '1px solid var(--rc-color-border-secondary)',
+        border: '1px solid var(--rcui-color-border-secondary)',
         borderRadius: 12,
       }}
     >
@@ -26,7 +26,7 @@ export default function LayoutBasic() {
         style={{
           height: 56,
           lineHeight: '56px',
-          background: 'var(--rc-color-primary)',
+          background: 'var(--rcui-color-primary)',
           borderBottom: 0,
           color: '#fff',
           fontWeight: 600,
@@ -52,7 +52,7 @@ export default function LayoutBasic() {
                   gap: 10,
                   padding: '9px 12px',
                   borderRadius: 6,
-                  color: 'var(--rc-color-text-secondary)',
+                  color: 'var(--rcui-color-text-secondary)',
                   fontSize: 13,
                   whiteSpace: 'nowrap',
                 }}
@@ -65,7 +65,7 @@ export default function LayoutBasic() {
         </Sider>
         <Content style={{ padding: 20 }}>
           <h3 style={{ margin: 0 }}>内容区域</h3>
-          <p style={{ color: 'var(--rc-color-text-secondary)', lineHeight: 1.8 }}>
+          <p style={{ color: 'var(--rcui-color-text-secondary)', lineHeight: 1.8 }}>
             Layout 使用 flex 布局组合 Header、Sider、Content 与 Footer。
             Sider 内置折叠触发器，折叠后可通过 onCollapse 同步外部状态。
           </p>

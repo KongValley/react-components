@@ -74,10 +74,10 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skele
     <div
       ref={ref}
       className={cx(
-        'rc-skeleton',
-        active && 'rc-skeleton--active',
-        avatarConfig && 'rc-skeleton--with-avatar',
-        round && 'rc-skeleton--round',
+        'rcui-skeleton',
+        active && 'rcui-skeleton--active',
+        avatarConfig && 'rcui-skeleton--with-avatar',
+        round && 'rcui-skeleton--round',
         className,
       )}
       aria-busy="true"
@@ -86,19 +86,19 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skele
     >
       {avatarConfig ? (
         <div
-          className={cx('rc-skeleton__avatar', `rc-skeleton__avatar--${avatarShape}`)}
+          className={cx('rcui-skeleton__avatar', `rcui-skeleton__avatar--${avatarShape}`)}
           style={{ width: avatarSize, height: avatarSize }}
         />
       ) : null}
-      <div className="rc-skeleton__content">
+      <div className="rcui-skeleton__content">
         {titleConfig ? (
           <div
-            className="rc-skeleton__title"
+            className="rcui-skeleton__title"
             style={{ width: width(titleConfig.width) ?? '38%' }}
           />
         ) : null}
         {paragraphConfig ? (
-          <div className="rc-skeleton__paragraph">
+          <div className="rcui-skeleton__paragraph">
             {Array.from({ length: rows }, (_, index) => {
               const customWidth = Array.isArray(paragraphWidth)
                 ? paragraphWidth[index]
@@ -108,7 +108,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(function Skele
               return (
                 <div
                   key={index}
-                  className="rc-skeleton__line"
+                  className="rcui-skeleton__line"
                   style={{ width: rowWidth }}
                 />
               );

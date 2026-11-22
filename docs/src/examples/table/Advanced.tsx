@@ -95,7 +95,7 @@ export default function TableAdvanced() {
         >
           删除所选
         </Button>
-        <span style={{ color: 'var(--rc-color-text-secondary)', fontSize: 13 }}>
+        <span style={{ color: 'var(--rcui-color-text-secondary)', fontSize: 13 }}>
           已选择 {selectedKeys.length} 项
         </span>
       </Space>

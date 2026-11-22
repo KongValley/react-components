@@ -42,12 +42,12 @@ export function useModalFooter({
 
   if (footer === null) return null;
   if (footer !== undefined) {
-    return <div className="rc-modal__footer">{footer}</div>;
+    return <div className="rcui-modal__footer">{footer}</div>;
   }
   if (!onOk && !onCancel) return null;
 
   return (
-    <div className="rc-modal__footer">
+    <div className="rcui-modal__footer">
       {onCancel ? (
         <Button variant="default" onClick={onCancel}>
           {cancelText}

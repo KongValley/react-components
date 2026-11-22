@@ -194,7 +194,7 @@ export function Picker({
       safeArea={safeArea}
       maskClosable={maskClosable}
       showHandle={false}
-      className={cx('rc-picker', className)}
+      className={cx('rcui-picker', className)}
       bodyStyle={{ padding: 0 }}
       onClose={handleCancel}
       afterClose={afterClose}
@@ -202,34 +202,34 @@ export function Picker({
       zIndex={zIndex}
       aria-label={typeof title === 'string' ? title : 'Picker'}
     >
-      <div className="rc-picker__header">
+      <div className="rcui-picker__header">
         <button
           type="button"
-          className="rc-picker__button"
+          className="rcui-picker__button"
           onClick={handleCancel}
         >
           {cancelText}
         </button>
-        <div className="rc-picker__title">{title}</div>
+        <div className="rcui-picker__title">{title}</div>
         <button
           type="button"
-          className="rc-picker__button rc-picker__button--confirm"
+          className="rcui-picker__button rcui-picker__button--confirm"
           onClick={handleConfirm}
         >
           {confirmText}
         </button>
       </div>
-      <div className="rc-picker__columns">
+      <div className="rcui-picker__columns">
         {columns.map((column, columnIndex) => {
           const columnId = `${baseId}-column-${columnIndex}`;
           const activeIndex = indices[columnIndex] ?? 0;
           return (
-            <div className="rc-picker__column" key={column.key ?? columnIndex}>
+            <div className="rcui-picker__column" key={column.key ?? columnIndex}>
               <div
                 ref={(node) => {
                   wheelRefs.current[columnIndex] = node;
                 }}
-                className="rc-picker__wheel"
+                className="rcui-picker__wheel"
                 role="listbox"
                 tabIndex={0}
                 aria-label={column.key ?? `Column ${columnIndex + 1}`}
@@ -244,8 +244,8 @@ export function Picker({
                     key={`${String(option.value)}-${optionIndex}`}
                     id={`${columnId}-option-${optionIndex}`}
                     className={cx(
-                      'rc-picker__item',
-                      optionIndex === activeIndex && 'rc-picker__item--active',
+                      'rcui-picker__item',
+                      optionIndex === activeIndex && 'rcui-picker__item--active',
                     )}
                     role="option"
                     aria-selected={optionIndex === activeIndex}
@@ -258,9 +258,9 @@ export function Picker({
             </div>
           );
         })}
-        <div className="rc-picker__indicator" aria-hidden="true" />
-        <div className="rc-picker__fade rc-picker__fade--top" aria-hidden="true" />
-        <div className="rc-picker__fade rc-picker__fade--bottom" aria-hidden="true" />
+        <div className="rcui-picker__indicator" aria-hidden="true" />
+        <div className="rcui-picker__fade rcui-picker__fade--top" aria-hidden="true" />
+        <div className="rcui-picker__fade rcui-picker__fade--bottom" aria-hidden="true" />
       </div>
     </Popup>
   );

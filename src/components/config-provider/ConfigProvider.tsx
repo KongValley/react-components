@@ -18,7 +18,7 @@ export interface ConfigProviderProps {
   breakpoint?: number;
   /** Makes adaptive components (Modal, Select) use their mobile form. */
   adaptive?: boolean;
-  /** Mirrors the resolved device to `data-rc-device` on `<html>`. */
+  /** Mirrors the resolved device to `data-rcui-device` on `<html>`. */
   applyToRoot?: boolean;
 }
 
@@ -46,11 +46,11 @@ export function ConfigProvider({
   useEffect(() => {
     if (!applyToRoot || !canUseDOM) return;
     const root = document.documentElement;
-    const previous = root.getAttribute('data-rc-device');
-    root.setAttribute('data-rc-device', resolvedDevice);
+    const previous = root.getAttribute('data-rcui-device');
+    root.setAttribute('data-rcui-device', resolvedDevice);
     return () => {
-      if (previous === null) root.removeAttribute('data-rc-device');
-      else root.setAttribute('data-rc-device', previous);
+      if (previous === null) root.removeAttribute('data-rcui-device');
+      else root.setAttribute('data-rcui-device', previous);
     };
   }, [applyToRoot, resolvedDevice]);
 

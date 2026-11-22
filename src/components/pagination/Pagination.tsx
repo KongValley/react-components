@@ -103,16 +103,16 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
   return (
     <div
       ref={ref}
-      className={cx('rc-pagination', simple && 'rc-pagination--simple', className)}
+      className={cx('rcui-pagination', simple && 'rcui-pagination--simple', className)}
       role="navigation"
       aria-label="Pagination"
       {...rest}
     >
-      {showTotal ? <span className="rc-pagination__total">{showTotal(total, range)}</span> : null}
+      {showTotal ? <span className="rcui-pagination__total">{showTotal(total, range)}</span> : null}
 
       <button
         type="button"
-        className="rc-pagination__item rc-pagination__item--arrow"
+        className="rcui-pagination__item rcui-pagination__item--arrow"
         aria-label="Previous page"
         disabled={disabled || safeCurrent <= 1}
         onClick={() => changePage(safeCurrent - 1)}
@@ -121,9 +121,9 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
       </button>
 
       {simple ? (
-        <span className="rc-pagination__simple">
-          <span className="rc-pagination__simple-current">{safeCurrent}</span>
-          <span className="rc-pagination__simple-sep">/</span>
+        <span className="rcui-pagination__simple">
+          <span className="rcui-pagination__simple-current">{safeCurrent}</span>
+          <span className="rcui-pagination__simple-sep">/</span>
           <span>{totalPages}</span>
         </span>
       ) : (
@@ -134,7 +134,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
               <button
                 key={item}
                 type="button"
-                className="rc-pagination__item rc-pagination__item--jump"
+                className="rcui-pagination__item rcui-pagination__item--jump"
                 aria-label={item === 'prev-more' ? 'Jump back 5 pages' : 'Jump forward 5 pages'}
                 disabled={disabled}
                 onClick={() => jumpTo(safeCurrent + direction)}
@@ -148,8 +148,8 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
               key={item}
               type="button"
               className={cx(
-                'rc-pagination__item',
-                item === safeCurrent && 'rc-pagination__item--active',
+                'rcui-pagination__item',
+                item === safeCurrent && 'rcui-pagination__item--active',
               )}
               aria-label={`Page ${item}`}
               aria-current={item === safeCurrent ? 'page' : undefined}
@@ -164,7 +164,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
 
       <button
         type="button"
-        className="rc-pagination__item rc-pagination__item--arrow"
+        className="rcui-pagination__item rcui-pagination__item--arrow"
         aria-label="Next page"
         disabled={disabled || safeCurrent >= totalPages}
         onClick={() => changePage(safeCurrent + 1)}
@@ -173,7 +173,7 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
       </button>
 
       {!simple && showSizeChanger ? (
-        <span className="rc-pagination__size">
+        <span className="rcui-pagination__size">
           <Select
             size="small"
             options={options}
@@ -186,10 +186,10 @@ export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(function P
       ) : null}
 
       {!simple && showQuickJumper ? (
-        <span className="rc-pagination__jumper">
+        <span className="rcui-pagination__jumper">
           <span>Jump to</span>
           <input
-            className="rc-pagination__jumper-input"
+            className="rcui-pagination__jumper-input"
             value={jumpValue}
             disabled={disabled}
             aria-label="Page number"

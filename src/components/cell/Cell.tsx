@@ -62,10 +62,10 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>(function Cell(
       {...rest}
       ref={ref}
       className={cx(
-        'rc-cell',
-        `rc-cell--align-${align}`,
-        isClickable && 'rc-cell--clickable',
-        disabled && 'rc-cell--disabled',
+        'rcui-cell',
+        `rcui-cell--align-${align}`,
+        isClickable && 'rcui-cell--clickable',
+        disabled && 'rcui-cell--disabled',
         className,
       )}
       role={isClickable ? 'button' : undefined}
@@ -74,22 +74,22 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>(function Cell(
       onClick={disabled ? undefined : onClick}
       onKeyDown={handleKeyDown}
     >
-      {icon !== undefined ? <span className="rc-cell__icon">{icon}</span> : null}
-      <div className="rc-cell__body">
+      {icon !== undefined ? <span className="rcui-cell__icon">{icon}</span> : null}
+      <div className="rcui-cell__body">
         {title !== undefined || value !== undefined ? (
-          <div className="rc-cell__line">
-            <span className="rc-cell__title">{title}</span>
-            {value !== undefined ? <span className="rc-cell__value">{value}</span> : null}
+          <div className="rcui-cell__line">
+            <span className="rcui-cell__title">{title}</span>
+            {value !== undefined ? <span className="rcui-cell__value">{value}</span> : null}
           </div>
         ) : null}
         {description !== undefined ? (
-          <div className="rc-cell__description">{description}</div>
+          <div className="rcui-cell__description">{description}</div>
         ) : null}
         {children}
       </div>
-      {extra !== undefined ? <span className="rc-cell__extra">{extra}</span> : null}
+      {extra !== undefined ? <span className="rcui-cell__extra">{extra}</span> : null}
       {arrow ? (
-        <span className="rc-cell__arrow" aria-hidden="true">
+        <span className="rcui-cell__arrow" aria-hidden="true">
           <Icon name="chevron-right" size={16} />
         </span>
       ) : null}

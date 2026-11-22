@@ -15,7 +15,7 @@ describe('Alert', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Close alert' }));
 
     expect(onClose).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('alert')).toHaveClass('rc-alert--closing');
+    expect(screen.getByRole('alert')).toHaveClass('rcui-alert--closing');
 
     act(() => {
       vi.advanceTimersByTime(200);
